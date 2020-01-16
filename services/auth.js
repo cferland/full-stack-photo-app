@@ -24,7 +24,7 @@ const restrict = (req, res, next) => {
     const data = jwt.verify(token, TOKEN_KEY);
     res.locals.user = data;
     next();
-  } catch (e) {
+  } catch (e) { 
     console.log(e);
     res.status(403).send('Unauthorized');
   }
