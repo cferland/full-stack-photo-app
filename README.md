@@ -1,5 +1,7 @@
 # Full Stack Photo App
 
+![Cheetohs Logo](/client/src/assets/graphics/CheetohsLogo.png)
+
 
 ## Overview
 
@@ -53,31 +55,22 @@ _The **Project Title** MVP will provide a login and registration form to users, 
 
 #### Wireframes
 
-> Use the Wireframes section to display desktop, tablet and mobile views.
+![Landing](/client/src/assets/mockups/Landing.png)
 
-![Desktop Landing](url)
+- Landing Page
 
-- Desktop Landing
+![Create Post](/client/src/assets/mockups/CreatePost.png)
 
-![Desktop Hero](url)
+- Create Post
 
-- Desktop Hero
+![View Post](/client/src/assets/mockups/PostView.png)
 
-![Resource Index](url)
+- View Post
 
-- Resource Index
+![Gallery](/client/src/assets/mockups/Gallery.png)
 
-![Resource Show](url)
+- Gallery
 
-- Resource Show
-
-![Tablet Resource Index](url)
-
-- Tablet Resource Index
-
-![Mobile Resource Index](url)
-
-- Mobile Resource Index
 
 #### Component Hierarchy
 
