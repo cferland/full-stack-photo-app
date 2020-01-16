@@ -33,6 +33,7 @@ const seed = async () => {
   await admin.addPost([post1, post2, post3])
 
   process.exit();
+  
 }
 
 seed();
