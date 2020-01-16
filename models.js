@@ -1,4 +1,4 @@
-const sequelize = require('sequelize');
+const { Sequelize } = require('sequelize');
 
 const sequelize = new Sequelize({
     database: 'photoapp_db',
@@ -16,7 +16,7 @@ Post.init({
     caption: Sequelize.TEXT,
     location: Sequelize.STRING
 }, {
-    seqeulize,
+    sequelize,
     modelName: 'post'
 });
 
