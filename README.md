@@ -133,18 +133,16 @@ src
 
 #### ERD Model
 
-> Use this section to display an image of a computer generated ERD model.
+![ERD](/client/src/assets/graphics/ERD.png)
 
 #### Data Heirarchy
 
-> Use this section to display the database, table, and attribute heirarchy.
-
 ``` structure
 
-database_db
+photoapp_db
 |__ users/
-|__ resources/
 |__ posts/
+|__ galleries/
 
 ```
 
