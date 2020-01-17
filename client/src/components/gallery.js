@@ -6,35 +6,38 @@ class Gallery extends Component {
     super(props)
 
     this.state = {
-      post: [],
-      apiDataLoaded: false
+      posts: null
     }
   }
 
-  componentDidMount = async e => {
-    const response = await axios.get('http://localhost:3000/posts')
-    console.log(response.data);
-
-    this.setState({
-      post: response.data,
-      apiDataLoaded: true
-    })
-    
+  componentDidMount = async () => {
+    await this.props.getPosts();
   }
+
+  // componentDidMount = async e => {
+  //   const response = await axios.get('http://localhost:3001/posts')
+  //   console.log(response.data);
+
+  //   this.setState({
+  //     post: response.data,
+  //     apiDataLoaded: true
+  //   })
+    
+  // }
 
   render() {
     return (
       <div>
         <header>All the Cheetoh Photos</header>
         <main>
-          {this.state.apiLoaded ? (
+          {this.props.posts ? (
             <div>
-              {this.state.posts.map((person, index) => (
+              {this.props.posts.map((post, index) => (
                 <div key={index} className="post-card">
-                  <h2 className="name">{person.username}</h2>
-                  <h3>{person.image_url}</h3>
-                  <p>{person.caption}</p>
-                  <p>{person.location}</p>
+                  <h2 className="name">{post.username}</h2>
+                  <img src={post.image_url}></img>
+                  <p>{post.caption}</p>
+                  <p>{post.location}</p>
                 </div>
               ))}
             </div>
@@ -47,3 +50,5 @@ class Gallery extends Component {
   }
 
 }
+
+export default Gallery;
