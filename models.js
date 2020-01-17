@@ -40,17 +40,21 @@ class Comment extends Sequelize.Model {}
 
 Comment.init(
   {
+    username: Sequelize.STRING,
     comment: Sequelize.STRING
   },
   {
     sequelize,
-    modelName: "user"
+    modelName: "comment"
   }
 );
 
 User.hasMany(Post, { onDelete: "cascade" });
+User.hasMany(Comment, { onDelete: "cascade" });
 Post.belongsTo(User);
+Post.hasMany(Comment, { onDelete: "cascade" });
 Comment.belongsTo(Post);
+Comment.belongsTo(User);
 
 module.exports = {
   Post,
