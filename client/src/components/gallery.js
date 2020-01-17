@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import axios from 'axios'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Gallery extends Component {
   constructor(props) {
@@ -14,17 +14,6 @@ class Gallery extends Component {
     await this.props.getPosts();
   }
 
-  // componentDidMount = async e => {
-  //   const response = await axios.get('http://localhost:3001/posts')
-  //   console.log(response.data);
-
-  //   this.setState({
-  //     post: response.data,
-  //     apiDataLoaded: true
-  //   })
-    
-  // }
-
   render() {
     return (
       <div>
@@ -38,6 +27,7 @@ class Gallery extends Component {
                   <img src={post.image_url}></img>
                   <p>{post.caption}</p>
                   <p>{post.location}</p>
+                  <Link to={`/post/${post.id}`}>Go to Post</Link>
                 </div>
               ))}
             </div>

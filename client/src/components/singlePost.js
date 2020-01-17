@@ -20,6 +20,7 @@ class Post extends Component {
       post,
       postId
     })
+    console.log(this.props.posts);
   }
 
   setPost = (newPost) => {
@@ -76,7 +77,7 @@ class Post extends Component {
                 </button>
                 {this.state.editing &&
                   <EditPostForm
-                    editPost={this.props.editPost}
+                    updatePost={this.props.updatePost}
                     postId={this.props.match.params.id}
                     posts={this.props.posts}
                     setPost={this.setPost}
