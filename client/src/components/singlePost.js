@@ -50,14 +50,14 @@ class Post extends Component {
         {this.state.post &&
           <div>
             <h4>
-              {this.state.post.title}
+              {this.state.post.username}
             </h4>
             <img src={this.state.post.image_url} />
             <p>
-              Description: {this.state.post.description}
+              {this.state.post.caption}
             </p>
             <p>
-              Fun Fact: {this.state.post.fun_fact}
+              Location: {this.state.post.location}
             </p>
             {this.props.currentUser
               ?
