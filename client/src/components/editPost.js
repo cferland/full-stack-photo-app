@@ -18,14 +18,14 @@ export default class EditPostForm extends Component {
     }
      setFormData = () => {
         if (this.props.posts.length) {
-            const { name, image_url, description, fun_fact } = this.props.posts.find(post => {
-                return post.id === parseInt(this.props.postlId)
+            const { username, image_url, caption, location } = this.props.posts.find(post => {
+                return post.id === parseInt(this.props.postId)
             })
             this.setState({
-                name,
+                username,
                 image_url,
-                description,
-                fun_fact
+                caption,
+                location
             })
         }
     }
