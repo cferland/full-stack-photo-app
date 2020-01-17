@@ -25,7 +25,23 @@ class Gallery extends Component {
   render() {
     return (
       <div>
-        
+        <header>All the Cheetoh Photos</header>
+        <main>
+          {this.state.apiLoaded ? (
+            <div>
+              {this.state.posts.map((person, index) => (
+                <div key={index} className="post-card">
+                  <h2 className="name">{person.username}</h2>
+                  <h3>{person.image_url}</h3>
+                  <p>{person.caption}</p>
+                  <p>{person.location}</p>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div>Loading...</div>
+          )}
+        </main>
       </div>
     )
   }
