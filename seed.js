@@ -1,4 +1,4 @@
-const { User, Post } = require('./models');
+const { User, Post, Comment } = require('./models');
 
 const seed = async () => {
   await User.destroy({ where: {} })
@@ -31,6 +31,16 @@ const seed = async () => {
   })
 
   await admin.addPost([post1, post2, post3])
+
+  await Comment.destroy({ where: {} })
+
+  const comment1 = await Comment.create({
+    username: 'Ash Money',
+    comment: 'Sick cheetoh photo',
+    // post_id: 1
+  })
+
+  await post1.addComment(comment1)
 
   process.exit();
   
