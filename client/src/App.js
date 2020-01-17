@@ -19,7 +19,6 @@ class App extends Component {
       errorText: '',
       post: null,
       posts: null
-
     }
   }
 
