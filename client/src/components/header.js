@@ -2,18 +2,20 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Header(props) {
-  <nav>
-    {this.props.currentUser ?
+  return (
+    <nav>
+    {props.currentUser ?
       <div>
-        <p>Hello, {this.props.currentUser.username}</p>
-        <button onClick={this.props.handleLogout}>Logout</button>
+        <p>Hello, {props.currentUser.username}</p>
+        <button onClick={props.handleLogout}>Logout</button>
       </div>
       :
       <Link to="/login">Login / Register</Link>
     }
     <br />
     <Link to="/">Home</Link>
-  </nav>
+    </nav>
+  )
 }
 
 export default Header;

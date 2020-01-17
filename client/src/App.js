@@ -4,8 +4,9 @@ import './App.css';
 
 import { loginUser, registerUser, verifyUser, showPost, showPosts, createPost, updatePost, deletePost } from './services/api_helper';
 
-import LoginForm from './components/login';
-import RegisterForm from './components/register';
+import Header from './components/header';
+import Login from './components/login';
+import Register from './components/register';
 import Post from './components/singlePost';
 import Gallery from './components/gallery';
 
@@ -107,10 +108,10 @@ class App extends Component {
         <Header logout={this.handleLogout} currentUser={this.state.currentUser} />
         {this.state.errorText && <p className="error">{this.state.errorText}</p>}
         <Route path="/login" render={() => (
-          <LoginForm handleLogin={this.handleLogin} />
+          <Login handleLogin={this.handleLogin} />
         )} />
         <Route path="/register" render={() => (
-          <RegisterForm handleRegister={this.handleRegister} />
+          <Register handleRegister={this.handleRegister} />
         )} />
 
         <Route exact path="/" render={(props) =>
