@@ -14,7 +14,20 @@ class Gallery extends Component {
   componentDidMount = async e => {
     const response = await axios.get('http://localhost:3000/posts')
     console.log(response.data);
+
+    this.setState({
+      post: response.data,
+      apiDataLoaded: true
+    })
     
+  }
+
+  render() {
+    return (
+      <div>
+        
+      </div>
+    )
   }
 
 }
