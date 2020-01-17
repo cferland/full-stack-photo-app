@@ -36,8 +36,7 @@ const seed = async () => {
 
   const comment1 = await Comment.create({
     username: 'Ash Money',
-    comment: 'Sick cheetoh photo',
-    // post_id: 1
+    comment: 'Sick cheetoh photo'
   })
 
   await post1.addComment(comment1)
