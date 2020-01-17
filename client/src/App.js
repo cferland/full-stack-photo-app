@@ -104,18 +104,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <nav>
-          {this.state.currentUser ?
-            <div>
-              <p>Hello, {this.state.currentUser.username}</p>
-              <button onClick={this.handleLogout}>Logout</button>
-            </div>
-            :
-            <Link to="/login">Login / Register</Link>
-          }
-          <br />
-          <Link to="/">Go to Blog</Link>
-        </nav>
+        <Header logout={this.handleLogout} currentUser={this.state.currentUser} />
         {this.state.errorText && <p className="error">{this.state.errorText}</p>}
         <Route path="/login" render={() => (
           <LoginForm handleLogin={this.handleLogin} />
