@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
+import CreatePost from './createPost';
 
 class Gallery extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      posts: null
+      posts: null,
+      addingPost: false
     }
   }
 
@@ -30,10 +32,19 @@ class Gallery extends Component {
                   <Link to={`/post/${post.id}`}>Go to Post</Link>
                 </div>
               ))}
+              {this.props.currentUser &&
+                <button onClick={() => (this.setState({ addingPost: true }))}>Add a Post</button>
+              }
+              {this.state.addingPost && 
+                <CreatePost
+                  createPost={this.props.createPost}
+                /> 
+              }
             </div>
           ) : (
-            <div>Loading...</div>
-          )}
+              <div>Loading...</div>
+            )}
+
         </main>
       </div>
     )

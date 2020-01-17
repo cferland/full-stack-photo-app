@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, Redirect } from 'react-router-dom';
 import './App.css';
 
 import { loginUser, registerUser, verifyUser, showPost, showPosts, createPost, updatePost, deletePost } from './services/api_helper';
@@ -109,10 +109,12 @@ class App extends Component {
         <Header logout={this.handleLogout} currentUser={this.state.currentUser} />
         {this.state.errorText && <p className="error">{this.state.errorText}</p>}
         <Route path="/login" render={() => (
-          <Login handleLogin={this.handleLogin} />
+          this.state.currentUser ? ( <Redirect to="/" /> ) : (
+          <Login handleLogin={this.handleLogin}  /> )
         )} />
         <Route path="/register" render={() => (
-          <Register handleRegister={this.handleRegister} />
+          this.state.currentUser ? ( <Redirect to="/" /> ) : (
+          <Register handleRegister={this.handleRegister} /> )
         )} />
 
         <Route exact path="/" render={(props) =>
