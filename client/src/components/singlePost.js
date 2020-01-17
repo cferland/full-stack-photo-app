@@ -64,9 +64,13 @@ class Post extends Component {
               ?
               <div>
                 <Link to='/'>
-                  <button onClick={(e) => {
+                <button onClick={(e) => {
+                  e.preventDefault();
+                  let safeguard = window.confirm('You are about to delete this post! Press OK to confirm.');
+                  if (safeguard === true) {
                     this.props.deletePost(e, this.state.postId);
                     this.reset();
+                  }
                   }
                   }>
                     Delete
