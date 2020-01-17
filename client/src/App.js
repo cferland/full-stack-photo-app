@@ -72,6 +72,7 @@ class App extends Component {
     this.setState({
       posts
     })
+    console.log(this.state.posts);
   }
 
   createPost = async (post) => {
