@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import EditPostForm from './editPost';
+import Comments from './comments'
 
 class Post extends Component {
   constructor(props) {
@@ -11,7 +12,8 @@ class Post extends Component {
       postDate: null,
       postId: null,
       editing: false,
-      likes: 0
+      likes: 0,
+      comments: null
     }
   }
 
@@ -76,7 +78,11 @@ class Post extends Component {
             </p>
             <p>Date: {this.state.postDate}</p>
             <button onClick={this.addLike}>Like</button>
-            <p>{this.state.likes}</p>
+          <p>{this.state.likes}</p>
+          
+          {/* <p>Comments:</p> */}
+          <Comments />
+
             {this.props.currentUser
               ?
               <div>
