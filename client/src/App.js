@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Link, Redirect } from 'react-router-dom';
 import './App.css';
+import './sass/app.scss';
 
 import { loginUser, registerUser, verifyUser, showPost, showPosts, createPost, updatePost, deletePost } from './services/api_helper';
 
