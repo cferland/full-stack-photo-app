@@ -10,8 +10,16 @@ class Post extends Component {
       post: null,
       postDate: null,
       postId: null,
-      editing: false
+      editing: false,
+      likes: 0
     }
+  }
+
+  addLike = (e) => {
+    e.preventDefault();
+    this.setState({
+      likes: this.state.likes + 1
+    })
   }
 
   componentDidMount = async () => {
@@ -67,6 +75,8 @@ class Post extends Component {
               Location: {this.state.post.location}
             </p>
             <p>Date: {this.state.postDate}</p>
+            <button onClick={this.addLike}>Like</button>
+            <p>{this.state.likes}</p>
             {this.props.currentUser
               ?
               <div>
