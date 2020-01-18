@@ -39,11 +39,13 @@ class Gallery extends Component {
                   {/* <p>{post.location}</p> */}
                   {/* <button onClick={(e) => this.handleLikes(e)}>Like</button> */}
                   {/* <p>{this.state.likes}</p> */}
-                  <Link to={`/post/${post.id}`}>Go to Post</Link>
+                  <button className="post-link"><Link to={`/post/${post.id}`}>Go to Post</Link></button>
                 </div>
               ))}
               {this.props.currentUser &&
-                <button onClick={() => (this.setState({ addingPost: true }))}>Add a Post</button>
+              <div className="add-post">
+                <button className="add-button" onClick={() => (this.setState({ addingPost: true }))}>Add a Post <br/><span className="plus-button">+</span></button>
+                </div>
               }
               {this.state.addingPost && 
                 <CreatePost
