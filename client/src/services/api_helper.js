@@ -10,7 +10,7 @@ export const createPost = async (newPost) => {
 }
 
 export const updatePost = async (id, updateData) => {
-  const resp = await api.put(`/post/${id}`, updateData);
+  const resp = await api.put(`/posts/${id}`, updateData);
   return resp.data;
 }
 
@@ -45,6 +45,7 @@ export const registerUser = async (registerData) => {
 
 export const verifyUser = async () => {
   const token = localStorage.getItem('authToken');
+  console.log(token);
   if (token) {
     api.defaults.headers.common.authorization = `Bearer ${token}`;
     const resp = await api.get('/auth/verify');

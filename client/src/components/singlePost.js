@@ -8,6 +8,7 @@ class Post extends Component {
 
     this.state = {
       post: null,
+      postDate: null,
       postId: null,
       editing: false,
       likes: 0
@@ -24,11 +25,15 @@ class Post extends Component {
   componentDidMount = async () => {
     const post = await this.props.getPost(this.props.match.params.id);
     const postId = this.props.match.params.id;
+    const setPostDate = new Date(post.createdAt);
+    const postDate = setPostDate.toDateString();
+    console.log(postDate);
     this.setState({
       post,
-      postId
+      postId,
+      postDate
     })
-    console.log(this.props.posts);
+    console.log(this.state.post);
   }
 
   setPost = (newPost) => {
@@ -49,6 +54,7 @@ class Post extends Component {
     this.setState({
       post: null,
       postId: null,
+      postDate: null,
       editing: false
     })
   }
@@ -68,19 +74,20 @@ class Post extends Component {
             <p>
               Location: {this.state.post.location}
             </p>
+            <p>Date: {this.state.postDate}</p>
             <button onClick={this.addLike}>Like</button>
             <p>{this.state.likes}</p>
             {this.props.currentUser
               ?
               <div>
                 <Link to='/'>
-                <button onClick={(e) => {
-                  e.preventDefault();
-                  let safeguard = window.confirm('You are about to delete this post! Press OK to confirm.');
-                  if (safeguard === true) {
-                    this.props.deletePost(e, this.state.postId);
-                    this.reset();
-                  }
+                  <button onClick={(e) => {
+                    e.preventDefault();
+                    let safeguard = window.confirm('You are about to delete this post! Press OK to confirm.');
+                    if (safeguard === true) {
+                      this.props.deletePost(e, this.state.postId);
+                      this.reset();
+                    }
                   }
                   }>
                     Delete
