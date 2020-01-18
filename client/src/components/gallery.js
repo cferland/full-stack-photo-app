@@ -8,12 +8,20 @@ class Gallery extends Component {
 
     this.state = {
       posts: null,
-      addingPost: false
+      addingPost: false,
+      likes: 0
     }
   }
 
   componentDidMount = async () => {
     await this.props.getPosts();
+  }
+
+  handleLikes = (e) => {
+    e.preventDefault();
+    this.setState({
+      likes: this.state.likes + 1
+    })
   }
 
   render() {
@@ -29,6 +37,8 @@ class Gallery extends Component {
                   <img src={post.image_url}></img>
                   <p>{post.caption}</p>
                   <p>{post.location}</p>
+                  <button onClick={(e) => this.handleLikes(e)}>Like</button>
+                  <p>{this.state.likes}</p>
                   <Link to={`/post/${post.id}`}>Go to Post</Link>
                 </div>
               ))}
