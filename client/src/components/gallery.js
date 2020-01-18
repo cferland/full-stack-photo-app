@@ -31,6 +31,7 @@ class Gallery extends Component {
         <main>
           {this.props.posts ? (
             <div>
+<<<<<<< HEAD
               {this.props.posts.map((post, index) => (
                 <div key={index}  className="social_card">
                   <h2 className="name">{post.username}</h2>
@@ -42,15 +43,30 @@ class Gallery extends Component {
                   <button className="post-link"><Link to={`/post/${post.id}`}>Go to Post</Link></button>
                 </div>
               ))}
+=======
+              {this.props.posts.map((post, index) => {
+                const setPostDate = new Date(post.createdAt);
+                const postDate = setPostDate.toDateString();
+                return (
+                  <div key={index} className="post-card">
+                    <h2 className="name">{post.username}</h2>
+                    <img src={post.image_url}></img>
+                    <p>{post.caption}</p>
+                    <p>{post.location}</p>
+                    <p>{postDate}</p>
+                    <Link to={`/post/${post.id}`}>Go to Post</Link>
+                  </div>)
+              })}
+>>>>>>> 628a79d09676116b1a3fbf2994a18d33270d285a
               {this.props.currentUser &&
               <div className="add-post">
                 <button className="add-button" onClick={() => (this.setState({ addingPost: true }))}>Add a Post <br/><span className="plus-button">+</span></button>
                 </div>
               }
-              {this.state.addingPost && 
+              {this.state.addingPost &&
                 <CreatePost
                   createPost={this.props.createPost}
-                /> 
+                />
               }
             </div>
           ) : (
