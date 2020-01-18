@@ -26,19 +26,19 @@ class Gallery extends Component {
 
   render() {
     return (
-      <div>
+      <div className="social_wrapper">
         <header>All the Cheetoh Photos</header>
         <main>
           {this.props.posts ? (
             <div>
               {this.props.posts.map((post, index) => (
-                <div key={index} className="post-card">
+                <div key={index}  className="social_card">
                   <h2 className="name">{post.username}</h2>
                   <img src={post.image_url}></img>
-                  <p>{post.caption}</p>
-                  <p>{post.location}</p>
-                  <button onClick={(e) => this.handleLikes(e)}>Like</button>
-                  <p>{this.state.likes}</p>
+                  {/* <p>{post.caption}</p> */}
+                  {/* <p>{post.location}</p> */}
+                  {/* <button onClick={(e) => this.handleLikes(e)}>Like</button> */}
+                  {/* <p>{this.state.likes}</p> */}
                   <Link to={`/post/${post.id}`}>Go to Post</Link>
                 </div>
               ))}
