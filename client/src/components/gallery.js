@@ -8,7 +8,8 @@ class Gallery extends Component {
 
     this.state = {
       posts: null,
-      addingPost: false
+      addingPost: false,
+      likes: 0
     }
   }
 
@@ -16,29 +17,56 @@ class Gallery extends Component {
     await this.props.getPosts();
   }
 
+  handleLikes = (e) => {
+    e.preventDefault();
+    this.setState({
+      likes: this.state.likes + 1
+    })
+  }
+
   render() {
     return (
-      <div>
+      <div className="social_wrapper">
         <header>All the Cheetoh Photos</header>
         <main>
           {this.props.posts ? (
             <div>
+<<<<<<< HEAD
               {this.props.posts.map((post, index) => (
-                <div key={index} className="post-card">
+                <div key={index}  className="social_card">
                   <h2 className="name">{post.username}</h2>
                   <img src={post.image_url}></img>
-                  <p>{post.caption}</p>
-                  <p>{post.location}</p>
-                  <Link to={`/post/${post.id}`}>Go to Post</Link>
+                  {/* <p>{post.caption}</p> */}
+                  {/* <p>{post.location}</p> */}
+                  {/* <button onClick={(e) => this.handleLikes(e)}>Like</button> */}
+                  {/* <p>{this.state.likes}</p> */}
+                  <button className="post-link"><Link to={`/post/${post.id}`}>Go to Post</Link></button>
                 </div>
               ))}
+=======
+              {this.props.posts.map((post, index) => {
+                const setPostDate = new Date(post.createdAt);
+                const postDate = setPostDate.toDateString();
+                return (
+                  <div key={index} className="post-card">
+                    <h2 className="name">{post.username}</h2>
+                    <img src={post.image_url}></img>
+                    <p>{post.caption}</p>
+                    <p>{post.location}</p>
+                    <p>{postDate}</p>
+                    <Link to={`/post/${post.id}`}>Go to Post</Link>
+                  </div>)
+              })}
+>>>>>>> 628a79d09676116b1a3fbf2994a18d33270d285a
               {this.props.currentUser &&
-                <button onClick={() => (this.setState({ addingPost: true }))}>Add a Post</button>
+              <div className="add-post">
+                <button className="add-button" onClick={() => (this.setState({ addingPost: true }))}>Add a Post <br/><span className="plus-button">+</span></button>
+                </div>
               }
-              {this.state.addingPost && 
+              {this.state.addingPost &&
                 <CreatePost
                   createPost={this.props.createPost}
-                /> 
+                />
               }
             </div>
           ) : (
