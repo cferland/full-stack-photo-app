@@ -55,7 +55,7 @@ class Post extends Component {
 
   render() {
     return (
-      <div>
+      <div className="social_card">
         {this.state.post &&
           <div>
             <h4>
