@@ -67,7 +67,7 @@ class Post extends Component {
             <h4>
               {this.state.post.username}
             </h4>
-            <img src={this.state.post.image_url} />
+            <img className="single-img" src={this.state.post.image_url} />
             <p>
               {this.state.post.caption}
             </p>

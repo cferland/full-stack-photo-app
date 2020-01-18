@@ -35,13 +35,13 @@ class Gallery extends Component {
                 const setPostDate = new Date(post.createdAt);
                 const postDate = setPostDate.toDateString();
                 return (
-                  <div key={index} className="post-card">
+                  <div key={index} className="social_card">
                     <h2 className="name">{post.username}</h2>
-                    <img src={post.image_url}></img>
-                    <p>{post.caption}</p>
+                    <img className="gallery-img" src={post.image_url}></img>
+                    {/* <p>{post.caption}</p>
                     <p>{post.location}</p>
-                    <p>{postDate}</p>
-                    <Link to={`/post/${post.id}`}>Go to Post</Link>
+                    <p>{postDate}</p> */}
+                    <button className="post-link"><Link to={`/post/${post.id}`}>Go to Post</Link></button> 
                   </div>)
               })}
               {this.props.currentUser &&

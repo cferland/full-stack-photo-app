@@ -10,6 +10,7 @@ import Login from './components/login';
 import Register from './components/register';
 import Post from './components/singlePost';
 import Gallery from './components/gallery';
+import Footer from './components/footer';
 
 class App extends Component {
   constructor(props) {
@@ -135,6 +136,7 @@ class App extends Component {
             deletePost={this.deletePost}
           />}
         />
+        <Footer/>
       </div>
     );
   }
