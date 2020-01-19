@@ -22,20 +22,22 @@ export default class Register extends Component {
       return (
         <form onSubmit={(e) => this.props.handleRegister(e, { username: this.state.username, password: this.state.password })}>
           <h2>Register!!</h2>
-          <label htmlFor='username'>username</label>
-          <input
+          <label htmlFor='username'></label>
+          <input className="reg-form"
             type='text'
             name='username'
             value={this.state.username}
             onChange={this.handleChange}
           />
-          <label htmlFor='password'>Password</label>
-          <input
+          <br/>
+          <label htmlFor='password'></label>
+          <input className="reg-form"
             type='password'
             name='password'
             value={this.state.password}
             onChange={this.handleChange}
           />
+          <br/>
           <input type='submit' />
         </form>
       )
