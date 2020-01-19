@@ -55,6 +55,7 @@ button:focus{
 .single-img {
     height: 500px;
     width: 500px;
+    border-radius: 5px;
 }
 
 .gallery-img {
@@ -112,4 +113,113 @@ input:focus{
 .btn:hover {
     color: white;
     border: solid white 1px;
+}
+
+.header {
+    font-size: 35px;
+    margin-top: 7px;
+    color: black;
+}
+
+.home-nav {
+    width: 100px;
+    border-radius: 10px;
+    background-color: orange;
+    border: solid black 1px;
+    padding: 7px;
+    margin-bottom: 7px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+}
+
+.home-nav:hover {
+    background: black;
+    color: orange;
+
+}
+
+.logout {
+    font-size: 12px;
+    width: 100px;
+    border-radius: 10px;
+    background-color: orange;
+    border: solid black 1px;
+    padding: 7px;
+    margin-bottom: 7px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+}
+
+.logout:hover {
+    background: black;
+    color: orange;
+}
+
+.like {
+    font-size: 12px;
+    width: 100px;
+    border-radius: 10px;
+    background-color: orange;
+    border: solid black 1px;
+    padding: 7px;
+    margin-bottom: 7px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+}
+
+.like:hover{
+    background: black;
+    color: orange;
+}
+
+.edit {
+    font-size: 12px;
+    width: 100px;
+    border-radius: 10px;
+    background-color: orange;
+    border: solid black 1px;
+    padding: 7px;
+    margin-bottom: 7px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+}
+
+.edit:hover{
+    background: black;
+    color: orange;
+}
+
+.delete {
+    font-size: 12px;
+    width: 100px;
+    border-radius: 10px;
+    background-color: orange;
+    border: solid black 1px;
+    padding: 7px;
+    margin-bottom: 7px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+}
+
+.delete:hover {
+    background: black;
+    color: orange;
+}
+
+.send-comment {
+    margin-left: 3px;
+    font-size: 12px;
+    width: 100px;
+    border-radius: 10px;
+    background-color: orange;
+    border: solid black 1px;
+    padding: 7px;
+    margin-bottom: 7px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+}
+
+.send-comment:hover{
+    background: black;
+    color: orange;
+}
+
+.comment {
+    margin-bottom: 10px;
+    width: 500px;
+    height: 25px;
 }
