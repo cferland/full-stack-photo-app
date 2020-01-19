@@ -61,4 +61,55 @@ button:focus{
     border-radius: 5px;
 }
 
+input {
+    background-color: orange;
+    border: solid black 1px;
+    border-radius: 5px;
+}
 
+caption {
+    /* margin: 0 auto; */
+    margin-left: 50%;
+    margin-right: 50%;
+}
+
+input:focus{
+    outline-width: 0;
+}
+
+.input {
+    color: black;
+}
+
+.user-form {
+    margin-top: 7px;
+    width: 300px;
+    height: 25px;
+    font-size: 20px;
+}
+
+#placeholder {
+    color: black;
+}
+
+.user-form:-webkit-autofill,
+.user-form:-webkit-autofill:hover, 
+.user-form:-webkit-autofill:focus,
+.reg-form:-webkit-autofill,
+.reg-form:-webkit-autofill:hover,
+.reg-form:-webkit-autofill:focus {
+  background-color: orange;
+  -webkit-text-fill-color: black;
+  -webkit-box-shadow: 0 0 0px 1000px orange inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.btn{
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.btn:hover {
+    color: white;
+    border: solid white 1px;
+}
