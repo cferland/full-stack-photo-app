@@ -56,6 +56,10 @@ Post.hasMany(Comment, { onDelete: "cascade" });
 Comment.belongsTo(Post);
 Comment.belongsTo(User);
 
+Post.addScope('defaultScope', {
+  order: [['id', 'DESC']],
+}, { override: true });
+
 module.exports = {
   Post,
   User,
