@@ -27,7 +27,7 @@ class Gallery extends Component {
   render() {
     return (
       <div className="social_wrapper">
-        <header>All the Cheetoh Photos</header>
+        <header className="header">All the Cheetoh Photos</header>
         <main>
           {this.props.posts ? (
             <div>
