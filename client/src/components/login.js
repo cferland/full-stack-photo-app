@@ -22,21 +22,26 @@ export default class Login extends Component {
     return (
       <form className='form' onSubmit={(e) => this.props.handleLogin(e, { username: this.state.username, password: this.state.password })}>
         <h2>Login!!</h2>
-        <label htmlFor='username'>username</label>
-        <input className='input'
+        <label htmlFor='username'></label>
+        <input className='user-form'
           type='text'
           name='username'
+          placeholder="username"
           value={this.state.username}
           onChange={this.handleChange}
         />
-        <label htmlFor='passwrod'>Password</label>
-        <input className='input'
+        <br/>
+        <label htmlFor='passwrod'></label>
+        <input className='user-form'
           type='password'
           name='password'
+          placeholder="password"
           value={this.state.password}
           onChange={this.handleChange}
         />
+        <br/>
         <input type='submit' className='btn'/>
+        <br/>
         <Link to ='/register'>Register</Link>
       </form>
     )
