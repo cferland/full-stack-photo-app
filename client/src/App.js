@@ -3,7 +3,7 @@ import { Route, Link, Redirect } from 'react-router-dom';
 import './App.css';
 import './sass/app.scss';
 
-import { loginUser, registerUser, verifyUser, showPost, showPosts, createPost, updatePost, deletePost } from './services/api_helper';
+import { loginUser, registerUser, verifyUser, showPost, showPosts, createPost, updatePost, deletePost, createComment } from './services/api_helper';
 
 import Header from './components/header';
 import Login from './components/login';
@@ -100,6 +100,10 @@ class App extends Component {
     await deletePost(id);
   }
 
+  createComment = async (id, comment) => {
+    await createComment(id, comment);
+  }
+
   componentDidMount() {
     this.handleVerify();
   }
@@ -126,7 +130,7 @@ class App extends Component {
             createPost={this.createPost}
           />}
         />
-        <Route exact path="/post/:id" render={(props) =>
+        <Route exact path="/posts/:id" render={(props) =>
           <Post {...props}
             getPost={this.getPost}
             currentUser={this.state.currentUser}
@@ -134,6 +138,7 @@ class App extends Component {
             posts={this.state.posts}
             updatePost={this.updatePost}
             deletePost={this.deletePost}
+            createComment={this.createComment}
           />}
         />
         <Footer/>
