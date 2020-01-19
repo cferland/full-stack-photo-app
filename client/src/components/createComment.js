@@ -24,7 +24,7 @@ class CreateComment extends Component {
         <form
           onSubmit={e => {
             e.preventDefault();
-            this.props.createPost(this.state);
+            this.props.createComment(this.props.postId, this.state);
           }}
         >
           <input className="comment"

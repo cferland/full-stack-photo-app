@@ -16,7 +16,7 @@ class Comments extends Component {
     return (
       <div>
         {this.state.comment}
-        <CreateComment />
+        <CreateComment postId={this.props.postId} createComment={this.props.createComment} />
       </div>
     )
   }
