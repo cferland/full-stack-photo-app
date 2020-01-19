@@ -40,7 +40,7 @@ class EditPostForm extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={(e) => {
+        <form className="edit-form" onSubmit={(e) => {
           e.preventDefault();
           this.props.updatePost(this.props.postId, this.state)
           this.props.setPost(this.state)
