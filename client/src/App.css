@@ -48,6 +48,12 @@ a {
     font-size: 15px;
 }
 
+<<<<<<< HEAD
+
+img {
+  width: 500px
+}
+=======
 button:focus{
     outline-width: 0;
 }
@@ -62,3 +68,4 @@ button:focus{
 }
 
 
+>>>>>>> 3ecf6abe55fabdeffeed2ad9a4bb015793ba35cd

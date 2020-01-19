@@ -53,3 +53,19 @@ export const verifyUser = async () => {
   }
   return false;
 }
+
+
+export const createComment = async (id, newComment) => {
+  const resp = await api.post(`/posts/${id}/comments`, newComment);
+  return resp.data;
+}
+
+export const updateComment = async (id, updateData) => {
+  const resp = await api.put(`/posts/${id}/comments`, updateData);
+  return resp.data;
+}
+
+export const deleteComment = async (id) => {
+  const resp = await api.delete(`posts/${id}/comments`);
+  return resp.data;
+}
