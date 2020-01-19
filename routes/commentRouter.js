@@ -20,7 +20,8 @@ commentRouter.route('/')
   .post(async (req, res, next) => {
     try {
       const comment = await Comment.create({
-        ...req.body
+        ...req.body,
+        postId: req.params.postId
       });
       res.json(comment);
     } catch (e) {
