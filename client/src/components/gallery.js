@@ -27,7 +27,7 @@ class Gallery extends Component {
   render() {
     return (
       <div className="social_wrapper">
-        <header>All the Cheetoh Photos</header>
+        <header className="header">All the Cheetoh Photos</header>
         <main>
           {this.props.posts ? (
             <div>
@@ -41,7 +41,7 @@ class Gallery extends Component {
                     {/* <p>{post.caption}</p>
                     <p>{post.location}</p>
                     <p>{postDate}</p> */}
-                    <button className="post-link"><Link to={`/post/${post.id}`}>Go to Post</Link></button> 
+                    <button className="post-link"><Link to={`/posts/${post.id}`}>Go to Post</Link></button> 
                   </div>)
               })}
               {this.props.currentUser &&

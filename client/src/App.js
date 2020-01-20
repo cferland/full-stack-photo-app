@@ -3,7 +3,7 @@ import { Route, Link, Redirect } from 'react-router-dom';
 import './App.css';
 import './sass/app.scss';
 
-import { loginUser, registerUser, verifyUser, showPost, showPosts, createPost, updatePost, deletePost } from './services/api_helper';
+import { loginUser, registerUser, verifyUser, showPost, showPosts, createPost, updatePost, deletePost, createComment, showComment, showComments, updateComment, deleteComment } from './services/api_helper';
 
 import Header from './components/header';
 import Login from './components/login';
@@ -20,7 +20,9 @@ class App extends Component {
       currentUser: null,
       errorText: '',
       post: null,
-      posts: null
+      posts: null,
+      comment: null,
+      comments: null
     }
   }
 
@@ -100,6 +102,46 @@ class App extends Component {
     await deletePost(id);
   }
 
+  getComment = async (id) => {
+    const comment = await showComment(id);
+    this.setState({
+      comment
+    })
+    return comment;
+  }
+  
+  getComments = async (id) => {
+    const comments = await showComments(id);
+    this.setState({
+      comments
+    })
+    console.log(this.state.comments);
+  }
+
+  createComment = async (comment) => {
+    const newComment = await createComment(comment);
+    const comments = this.state.comments;
+    comments.push(newComment);
+    this.setState({
+      comments
+    })
+  }
+  
+  updateComment = async (id, updates) => {
+    const newComment = await updateComment(id, updates);
+    this.setState({
+      comments: this.state.comments.map(comment => (
+        comment.id === parseInt(id) ? newComment : comment
+      )),
+      comment: newComment
+    })
+  }
+  
+  deleteComment = async (e, id) => {
+    e.preventDefault();
+    await deleteComment(id);
+  }
+
   componentDidMount() {
     this.handleVerify();
   }
@@ -126,7 +168,7 @@ class App extends Component {
             createPost={this.createPost}
           />}
         />
-        <Route exact path="/post/:id" render={(props) =>
+        <Route exact path="/posts/:id" render={(props) =>
           <Post {...props}
             getPost={this.getPost}
             currentUser={this.state.currentUser}
@@ -134,6 +176,7 @@ class App extends Component {
             posts={this.state.posts}
             updatePost={this.updatePost}
             deletePost={this.deletePost}
+            createComment={this.createComment}
           />}
         />
         <Footer/>

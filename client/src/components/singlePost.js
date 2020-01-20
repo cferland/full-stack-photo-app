@@ -70,24 +70,24 @@ class Post extends Component {
               {this.state.post.username}
             </h4>
             <img className="single-img" src={this.state.post.image_url} />
-            <p>
+            <p className="caption">
               {this.state.post.caption}
             </p>
             <p>
               Location: {this.state.post.location}
             </p>
             <p>Date: {this.state.postDate}</p>
-            <button onClick={this.addLike}>Like</button>
+            <button className="like" onClick={this.addLike}>Like</button>
           <p>{this.state.likes}</p>
           
           {/* <p>Comments:</p> */}
-          <Comments />
+          <Comments postId={this.props.match.params.id} createComment={this.props.createComment} />
 
             {this.props.currentUser
               ?
               <div>
                 <Link to='/'>
-                  <button onClick={(e) => {
+                  <button className="delete" onClick={(e) => {
                     e.preventDefault();
                     let safeguard = window.confirm('You are about to delete this post! Press OK to confirm.');
                     if (safeguard === true) {
@@ -99,7 +99,7 @@ class Post extends Component {
                     Delete
                   </button>
                 </Link>
-                <button onClick={(e) => this.editForm(e)}>
+                <button className="edit" onClick={(e) => this.editForm(e)}>
                   Edit
                 </button>
                 {this.state.editing &&

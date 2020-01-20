@@ -24,17 +24,17 @@ class CreateComment extends Component {
         <form
           onSubmit={e => {
             e.preventDefault();
-            this.props.createPost(this.state);
+            this.props.createComment(this.props.postId, this.state);
           }}
         >
-          <input
+          <input className="comment"
             type="textarea"
             name="comment"
             value={this.state.comment}
             onChange={this.handleChange}
             placeholder="add comment"
           />
-          <input type='submit' />
+          <input className="send-comment" type='submit' />
         </form>
       </div>
     );
