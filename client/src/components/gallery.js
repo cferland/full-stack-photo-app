@@ -26,11 +26,11 @@ class Gallery extends Component {
 
   render() {
     return (
-      <div className="social_wrapper">
+      <div>
         <header className="header">All the Cheetoh Photos</header>
-        <main>
+        <main className="gallery-space">
           {this.props.posts ? (
-            <div>
+            <div className="gallery">
               {this.props.posts.map((post, index) => {
                 const setPostDate = new Date(post.createdAt);
                 const postDate = setPostDate.toDateString();
