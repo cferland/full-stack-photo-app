@@ -82,7 +82,7 @@ input:focus{
     color: black;
 }
 
-.user-form {
+.login-form {
     margin-top: 7px;
     width: 300px;
     height: 25px;
@@ -93,35 +93,42 @@ input:focus{
     color: black;
 }
 
-.user-form:-webkit-autofill,
-.user-form:-webkit-autofill:hover, 
-.user-form:-webkit-autofill:focus,
+.login-form:-webkit-autofill,
+.login-form:-webkit-autofill:hover, 
+.login-form:-webkit-autofill:focus,
 .reg-form:-webkit-autofill,
 .reg-form:-webkit-autofill:hover,
-.reg-form:-webkit-autofill:focus {
+.reg-form:-webkit-autofill:focus,
+/* .edit:-webkit-autofill:hover,
+.edit:-webkit-autofill:focus, */
+.add:-webkit-autofill:hover,
+.add:-webkit-autofill:focus {
   background-color: orange;
   -webkit-text-fill-color: black;
   -webkit-box-shadow: 0 0 0px 1000px orange inset;
   transition: background-color 5000s ease-in-out 0s;
 }
 
-.btn{
+.login-submit{
     padding: 5px;
     margin-top: 5px;
 }
 
-.btn:hover {
-    color: white;
-    border: solid white 1px;
+.login-submit:hover {
+    background: black;
+    color: orange;
 }
 
 .header {
+    margin-top: 60px;
     font-size: 35px;
     margin-top: 7px;
     color: black;
 }
 
 .home-nav {
+    margin-top: 5px;
+    margin-left: 120px;
     width: 100px;
     border-radius: 10px;
     background-color: orange;
@@ -134,10 +141,29 @@ input:focus{
 .home-nav:hover {
     background: black;
     color: orange;
+}
 
+.login-button {
+    width: 100px;
+    margin-top: 5px;
+    border-radius: 10px;
+    background-color: orange;
+    border: solid black 1px;
+    padding: 7px;
+    margin-bottom: 7px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+}
+
+.login-button:hover {
+    background: black;
+    color: orange;
 }
 
 .logout {
+    margin-right: 20px;
+    font-size: 18px;
+    margin-top: 9px;
+    height: 32px;
     font-size: 12px;
     width: 100px;
     border-radius: 10px;
@@ -222,4 +248,47 @@ input:focus{
     margin-bottom: 10px;
     width: 500px;
     height: 25px;
+}
+
+.gallery-space {
+    margin-top: 40px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: baseline;
+    margin-left: 37%;
+}
+
+.header-section {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.register:hover {
+    text-decoration: underline;
+}
+
+.reg-form {
+    margin-top: 7px;
+    width: 300px;
+    height: 25px;
+    font-size: 20px;
+}
+
+.reg-submit {
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.reg-submit:hover{
+    background: black;
+    color: orange;
+}
+
+.footer {
+    margin-top: 20px;
+}
+
+@media only screen and (max-width: 500px) {
 }
