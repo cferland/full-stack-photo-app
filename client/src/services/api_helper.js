@@ -69,3 +69,13 @@ export const deleteComment = async (id) => {
   const resp = await api.delete(`posts/${id}/comments`);
   return resp.data;
 }
+
+export const showComment = async (id) => {
+  const resp = await api.get(`/posts/${id}/comments/${id}`);
+  return resp.data;
+}
+
+export const showComments = async (id) => {
+  const resp = await api.get(`/posts/${id}/comments`);
+  return resp.data;
+}
