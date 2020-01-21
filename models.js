@@ -2,21 +2,21 @@ const { Sequelize } = require("sequelize");
 
 let sequelize;
 
-if(process.env.DATABASE_URL) {
-    sequelize = new Sequelize(process.env.DATABASE_URL, {
-        dialect: 'postgres',
-        define: {
-            underscored: true
-        }
-    })
+if (process.env.DATABASE_URL) {
+  sequelize = new Sequelize(process.env.DATABASE_URL, {
+    dialect: 'postgres',
+    define: {
+      underscored: true
+    }
+  })
 } else {
   sequelize = new Sequelize({
-  database: "photoapp_db",
-  dialect: "postgres",
-  define: {
-    underscored: true
-  }
-});
+    database: "photoapp_db",
+    dialect: "postgres",
+    define: {
+      underscored: true
+    }
+  });
 }
 
 class Post extends Sequelize.Model {}

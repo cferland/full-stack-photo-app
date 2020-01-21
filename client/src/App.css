@@ -1,10 +1,24 @@
+
+body {
+  background-image: url('./assets/images/cheetah_background_effect2.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  border-top: 2px solid black;
+  margin: 0 auto;
+  background-color: black;
+}  
+
+
+
+
 .add-post {
     height: 400px;
     width: 250px;
     margin: 20px auto;
     border-radius:5px;
     /* opacity: 0.3; */
-    background-color: orange;
+    background-color: rgba(216, 127, 228, 0.5);
     border: dashed white 2px;
     /* margin-left: 20px%; */
     font-size: 20px;
@@ -14,7 +28,7 @@
 
 
 .add-button {
-    background-color: orange;
+    background-color: rgba(216, 127, 228, 0);
     margin-top: 50%;
     border: none;
     font-size: 20px;
@@ -36,7 +50,7 @@
     margin-bottom: 10%;
     width: 100px;
     border-radius: 10px;
-    background-color: orange;
+    background-color: rgba(216, 127, 228, 0.5);
     border: solid black 1px;
     box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
 }
@@ -57,7 +71,7 @@ button:focus{
 }
 
 .single-img {
-    height: 500px;
+    /* height: 500px; */
     width: 500px;
     border-radius: 5px;
     border: solid black 2px;
@@ -68,9 +82,10 @@ button:focus{
 }
 
 input {
-    background-color: orange;
+    background-color: rgba(216, 127, 228, 0.5);
     border: solid black 1px;
     border-radius: 5px;
+    color: black;
 }
 
 caption {
@@ -92,9 +107,6 @@ input:focus{
     width: 300px;
     height: 25px;
     font-size: 20px;
-}
-
-#placeholder {
     color: black;
 }
 
@@ -113,9 +125,9 @@ input:focus{
 .add:-webkit-autofill,
 .add:-webkit-autofill:hover,
 .add:-webkit-autofill:focus {
-  background-color: orange;
+  background-color: rgba(216, 127, 228, 0.5);
   -webkit-text-fill-color: black;
-  -webkit-box-shadow: 0 0 0px 1000px orange inset; 
+  -webkit-box-shadow: 0 0 0px 1000px rgba(216, 127, 228, 0.5) inset; 
   transition: background-color 5000s ease-in-out 0s;
   font-size: 10px;
 }
@@ -127,7 +139,7 @@ input:focus{
 
 .login-submit:hover {
     background: black;
-    color: orange;
+    color: rgba(216, 127, 228, 0.5);
 }
 
 .header {
@@ -143,7 +155,7 @@ input:focus{
     margin-right: 93%;
     width: 190px;
     border-radius: 10px;
-    background-color: orange;
+    background-color: rgba(216, 127, 228, 0.5);;
     border: solid black 1px;
     padding: 7px;
     padding-left: 33px;
@@ -154,14 +166,14 @@ input:focus{
 
 .back-nav:hover {
     background: black;
-    color: orange;
+    color: rgba(216, 127, 228, 0.5);;
 }
 
 .login-button {
     width: 100px;
     margin-top: 5px;
     border-radius: 10px;
-    background-color: orange;
+    background-color: rgba(216, 127, 228, 0.5);
     border: solid black 1px;
     padding: 7px;
     margin-bottom: 7px;
@@ -170,7 +182,7 @@ input:focus{
 
 .login-button:hover {
     background: black;
-    color: orange;
+    color: rgba(216, 127, 228, 0.5);;
 }
 
 .logout {
@@ -181,7 +193,7 @@ input:focus{
     font-size: 13px;
     width: 100px;
     border-radius: 10px;
-    background-color: orange;
+    background-color: rgba(216, 127, 228, 0.5);
     border: solid black 1px;
     color: black;
     padding: 7px;
@@ -191,14 +203,14 @@ input:focus{
 
 .logout:hover {
     background: black;
-    color: orange;
+    color: rgba(216, 127, 228, 0.5);;
 }
 
 .like {
     font-size: 12px;
     width: 100px;
     border-radius: 10px;
-    background-color: orange;
+    background-color: rgba(216, 127, 228, 0.5);;
     border: solid black 1px;
     padding: 7px;
     margin-bottom: 7px;
@@ -207,14 +219,14 @@ input:focus{
 
 .like:hover{
     background: black;
-    color: orange;
+    color: rgba(216, 127, 228, 0.5);;
 }
 
 .edit {
     font-size: 12px;
     width: 100px;
     border-radius: 10px;
-    background-color: orange;
+    background-color: rgba(216, 127, 228, 0.5);;
     border: solid black 1px;
     padding: 7px;
     margin-bottom: 7px;
@@ -223,14 +235,14 @@ input:focus{
 
 .edit:hover{
     background: black;
-    color: orange;
+    color: rgba(216, 127, 228, 0.5);;
 }
 
 .delete {
     font-size: 12px;
     width: 100px;
     border-radius: 10px;
-    background-color: orange;
+    background-color: rgba(216, 127, 228, 0.5);;
     border: solid black 1px;
     padding: 7px;
     margin-bottom: 7px;
@@ -239,7 +251,7 @@ input:focus{
 
 .delete:hover {
     background: black;
-    color: orange;
+    color: rgba(216, 127, 228, 0.5);;
 }
 
 .send-comment {
@@ -247,7 +259,7 @@ input:focus{
     font-size: 12px;
     width: 100px;
     border-radius: 10px;
-    background-color: orange;
+    background-color: rgba(216, 127, 228, 0.5);;
     border: solid black 1px;
     padding: 7px;
     margin-bottom: 7px;
@@ -256,7 +268,7 @@ input:focus{
 
 .send-comment:hover{
     background: black;
-    color: orange;
+    color: rgba(216, 127, 228, 0.5);;
 }
 
 .comment {
@@ -297,7 +309,7 @@ input:focus{
 
 .reg-submit:hover{
     background: black;
-    color: orange;
+    color: rgba(216, 127, 228, 0.5);;
 }
 
 .footer {
@@ -308,7 +320,7 @@ input:focus{
     width: 100px;
     margin-top: 5px;
     border-radius: 10px;
-    background-color: orange;
+    background-color: rgba(216, 127, 228, 0.5);
     border: solid black 1px;
     padding: 7px;
     margin-bottom: 7px;
@@ -317,70 +329,43 @@ input:focus{
 
 .home-nav:hover{
     background: black;
-    color: orange;
+    color: rgba(216, 127, 228, 0.5);;
 }
 
 .gallery-header {
     padding-top: 20px;
 }
 
-@media only screen and (max-width: 360px) {
-    .add-post {
-        margin-left: 50px;
-    }
-    .gallery {
-        margin-left: 10%;
-    }
-    .footer {
-        margin-left: 30%;
-    }
-    .nav-menu {
-        margin: 0;
-        margin-right: 20%;
-    }
-    .header {
-        font-size: 30px;
-        margin-left: 13%;
-    }
-    .back-nav  {
-        margin: 0;
-    }
-    /* .logout {
-        margin-bottom: 20px;
-    } */
-    .header-section {
-        margin-top: 20px;
-    }
-    footer {
-        margin-right: 50px;
-    }
-
+.post-card {
+  
+  width: 600px;
+  margin: 0 auto;
+  
+  border: 1px solid black;
+  border-radius: 1rem;
+  /* margin: 1rem; */
+  background-color: rgb(245, 255, 255, 0.3);
+  filter: drop-shadow(0 0 0.95rem rgba(94, 94, 94, 0.781));
 }
 
 @media only screen and (max-width: 500px) {
+   
     .add-post {
-        margin-right: 78px;
+        position: relative;
+        left: 1px;
     }
-    .back-nav {
-        margin: 0;
-    }
-}
-
-@media only screen and (max-width: 412px) {
-    .logout {
-        margin-right: 25%;
-    }
-    .back-nav {
-        margin-left: 5%;
-    }
-}
-
-@media only screen and (max-width: 320px) {
     .header {
-        margin-left: 30%;
+        font-size: 30px;
     }
-    .nav-menu {
-        margin-left: 40%;
+    .back-nav  {
+        margin: 0;
+    } 
+    .logout {
+        margin-left: 35.5%;
+    }
+    .single-img {
+        width: 250;
+        height: 250;
     }
 }
 
@@ -389,4 +374,15 @@ input:focus{
         margin: 0;
         margin-left: 27%;
     }
+
+    .post-card {
+      width: 400px;
+    }
+
+    .single-img {
+      /* height: 500px; */
+      width: 360px;
+      border-radius: 5px;
+      border: solid black 2px;
+  }
 }

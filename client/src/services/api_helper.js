@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const api = axios.create({
   baseURL: "http://localhost:3001"
+  //put heroku link here after deploying when ready
 })
 
 export const createPost = async (newPost) => {

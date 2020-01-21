@@ -22,7 +22,7 @@ export default class Login extends Component {
     return (
       <form className='form' onSubmit={(e) => this.props.handleLogin(e, { username: this.state.username, password: this.state.password })}>
         <h2>Login</h2>
-        <label htmlFor='username'></label>
+        {/* <label htmlFor='username'></label> */}
         <input className='login-form'
           autocomplete="off"
           type='text'
