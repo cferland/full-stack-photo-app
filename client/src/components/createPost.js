@@ -58,7 +58,7 @@ export default class CreatePost extends Component {
                         placeholder="Location"
                     />
 
-                    <input type="submit" />
+                    <input className="create" type="submit" />
                 </form>
             </div>
         )

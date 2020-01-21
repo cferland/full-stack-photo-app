@@ -82,7 +82,7 @@ class EditPostForm extends Component {
             placeholder="Location"
           />
 
-          <input type="submit" />
+          <input className="submit-edit" type="submit" />
         </form>
       </div>
     )

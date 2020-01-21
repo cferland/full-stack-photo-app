@@ -256,7 +256,7 @@ input:focus {
 }
 
 .send-comment {
-    margin-left: 3px;
+    margin-right: 2px;
     font-size: 12px;
     width: 100px;
     border-radius: 10px;
@@ -269,7 +269,7 @@ input:focus {
 
 .send-comment:hover{
     background: black;
-    color: rgba(216, 127, 228, 0.5);;
+    color: rgba(216, 127, 228, 0.5);
 }
 
 .comment {
@@ -287,13 +287,29 @@ input:focus {
   align-items: baseline;
 }
 
-/* .header-section {
-    display: flex;
-    flex-direction: row-reverse;
-} */
+.edit-input {
+    margin-left: 10px;
+}
 
 .register:hover {
   text-decoration: underline;
+}
+
+.delete {
+    margin-right: 5px;
+}
+
+.edit {
+    margin-left: 5px;
+}
+
+.submit-edit {
+    margin-left: 5px;
+}
+
+.submit-edit:hover {
+    background-color: black;
+    color: rgba(216, 127, 228, 0.5);
 }
 
 .reg-form {
@@ -330,7 +346,7 @@ input:focus {
 
 .home-nav:hover{
     background: black;
-    color: rgba(216, 127, 228, 0.5);;
+    color: rgba(216, 127, 228, 0.5);
 }
 
 .gallery-header {
@@ -346,6 +362,15 @@ input:focus {
   /* margin: 1rem; */
   background-color: rgb(245, 255, 255, 0.3);
   filter: drop-shadow(0 0 0.95rem rgba(94, 94, 94, 0.781));
+}
+
+.add {
+    margin-right: 10px;
+}
+
+.create:hover {
+    background-color: black;
+    color: rgba(216, 127, 228, 0.5);;
 }
 
 @media only screen and (max-width: 360px) {
