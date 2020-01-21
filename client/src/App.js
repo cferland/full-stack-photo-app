@@ -115,16 +115,17 @@ class App extends Component {
     this.setState({
       comments
     })
-    console.log(this.state.comments);
   }
 
-  createComment = async (comment) => {
-    const newComment = await createComment(comment);
+  createComment = async (id, comment) => {
+    const newComment = await createComment(id, comment);
     const comments = this.state.comments;
     comments.push(newComment);
     this.setState({
       comments
     })
+    console.log(this.state.comments);
+
   }
   
   updateComment = async (id, updates) => {
