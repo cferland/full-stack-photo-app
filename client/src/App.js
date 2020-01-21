@@ -3,7 +3,8 @@ import { Route, Link, Redirect } from 'react-router-dom';
 import './App.css';
 import './sass/app.scss';
 
-import { loginUser, registerUser, verifyUser, showPost, showPosts, createPost, updatePost, deletePost, createComment, showComment, showComments, updateComment, deleteComment } from './services/api_helper';
+import { loginUser, registerUser, verifyUser, showPost, showPosts, createPost, updatePost, 
+        deletePost, createComment, showComment, showComments, updateComment, deleteComment } from './services/api_helper';
 
 import Header from './components/header';
 import Login from './components/login';

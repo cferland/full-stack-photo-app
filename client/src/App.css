@@ -257,7 +257,7 @@ input:focus {
   font-size: 12px;
   width: 100px;
   border-radius: 10px;
-  background-color: rgba(216, 127, 228, 0.5);
+  background-color: orange;
   border: solid black 1px;
   padding: 7px;
   margin-bottom: 7px;
@@ -266,7 +266,7 @@ input:focus {
 
 .like:hover {
   background: black;
-  color: rgba(216, 127, 228, 0.5);
+  color: orange;
 }
 
 .edit {
