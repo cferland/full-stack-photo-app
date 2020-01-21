@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import EditPostForm from "./editPost";
 import Comments from "./comments";
+import LikeButton from "./likes.js";
 import Header from './header';
 
 class Post extends Component {
@@ -17,13 +18,6 @@ class Post extends Component {
       comments: []
     };
   }
-
-  addLike = e => {
-    e.preventDefault();
-    this.setState({
-      likes: this.state.likes + 1
-    });
-  };
 
   componentDidMount = async () => {
     const post = await this.props.getPost(this.props.match.params.id);
@@ -83,9 +77,9 @@ class Post extends Component {
               Location: {this.state.post.location}
             </p>
             <p>Date: {this.state.postDate}</p>
-            <button className="like" onClick={this.addLike}>Like</button>
-          <p>{this.state.likes}</p>
-          
+            {this.props.currentUser &&
+              <LikeButton posts={this.props.posts} postId={this.props.match.params.id} setPost={this.setPost} updatePost={this.props.updatePost} />
+            }
           {/* <p>Comments:</p> */}
           <Comments
             postId={this.props.match.params.id}
