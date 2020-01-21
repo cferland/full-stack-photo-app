@@ -91,7 +91,7 @@ class Post extends Component {
             currentUser={this.props.currentUser}
           />
 
-            {this.props.currentUser
+            {this.props.currentUser.username === this.state.post.username
               ?
               <div>
                 <Link to='/'>
@@ -120,7 +120,7 @@ class Post extends Component {
                 }
               </div>
               :
-              <p>You must login to edit posts!</p>
+              <p></p>
             }
           </div>
         }
