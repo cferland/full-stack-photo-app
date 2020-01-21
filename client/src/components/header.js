@@ -13,7 +13,7 @@ function Header(props) {
         </div>
       </div>
       :
-      <div>
+      <div className='login-home'>
       <Link className="login-button" to="/login">Login</Link>
       <Link className="home-nav" to="/">Home</Link>
       </div>
