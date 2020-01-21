@@ -1,3 +1,17 @@
+
+body {
+  background-image: url('./assets/images/cheetah_background_effect2.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  border-top: 2px solid black;
+  margin: 0 auto;
+
+}  
+
+
+
+
 .add-post {
     height: 400px;
     width: 250px;
@@ -57,7 +71,7 @@ button:focus{
 }
 
 .single-img {
-    height: 500px;
+    /* height: 500px; */
     width: 500px;
     border-radius: 5px;
     border: solid black 2px;
@@ -323,6 +337,19 @@ input:focus{
     padding-top: 20px;
 }
 
+.post-card {
+  
+  width: 600px;
+  margin: 0 auto;
+  
+  border: 1px solid black;
+  border-radius: 1rem;
+  /* margin: 1rem; */
+  background-color: rgb(245, 255, 255, 0.3);
+  filter: drop-shadow(0 0 0.95rem rgba(94, 94, 94, 0.781));
+}
+
+
 @media only screen and (max-width: 360px) {
     .add-post {
         margin-left: 50px;
@@ -388,4 +415,15 @@ input:focus{
         margin: 0;
         margin-left: 27%;
     }
+
+    .post-card {
+      width: 400px;
+    }
+
+    .single-img {
+      /* height: 500px; */
+      width: 360px;
+      border-radius: 5px;
+      border: solid black 2px;
+  }
 }
