@@ -5,7 +5,7 @@ export default class CreatePost extends Component {
         super(props);
 
         this.state = {
-            username: "",
+            username: this.props.currentUser.username,
             image_url: "",
             caption: "",
             location: ""
@@ -23,15 +23,16 @@ export default class CreatePost extends Component {
         return (
             <div>
                 <form onSubmit={(e) => {e.preventDefault(); this.props.createPost(this.state)}}>
-                    <input className="add"
+                    {/* <input className="add"
                         type="textarea"
                         name="username"
                         value={this.state.username}
                         onChange={this.handleChange}
                         placeholder="Username"
-                    />
+                    /> */}
 
                     <input className="add"
+                        autocomplete="off"
                         type="textarea"
                         name="image_url"
                         value={this.state.image_url}
@@ -40,6 +41,7 @@ export default class CreatePost extends Component {
                     />
 
                     <input className="add"
+                        autocomplete="off"
                         type="textarea"
                         name="caption"
                         value={this.state.caption}
@@ -48,6 +50,7 @@ export default class CreatePost extends Component {
                     />
 
                     <input className="add"
+                        autocomplete="off"
                         type="textarea"
                         name="location"
                         value={this.state.location}
@@ -55,7 +58,7 @@ export default class CreatePost extends Component {
                         placeholder="Location"
                     />
 
-                    <input type="submit" />
+                    <input className="create" type="submit" />
                 </form>
             </div>
         )

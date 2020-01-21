@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const api = axios.create({
   baseURL: "http://localhost:3001"
+  //put heroku link here after deploying when ready
 })
 
 export const createPost = async (newPost) => {
@@ -65,8 +66,8 @@ export const updateComment = async (id, updateData) => {
   return resp.data;
 }
 
-export const deleteComment = async (id) => {
-  const resp = await api.delete(`posts/${id}/comments`);
+export const deleteComment = async (postId, id) => {
+  const resp = await api.delete(`posts/${postId}/comments/${id}`);
   return resp.data;
 }
 

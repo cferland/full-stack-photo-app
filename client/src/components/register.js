@@ -24,6 +24,7 @@ export default class Register extends Component {
           <h2>Register</h2>
           <label htmlFor='username'></label>
           <input className="reg-form"
+            autocomplete="off"
             type='text'
             name='username'
             placeholder="username"
@@ -33,6 +34,7 @@ export default class Register extends Component {
           <br/>
           <label htmlFor='password'></label>
           <input className="reg-form"
+            autocomplete="off"
             type='password'
             name='password'
             placeholder="password"

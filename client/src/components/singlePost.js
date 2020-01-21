@@ -71,30 +71,34 @@ class Post extends Component {
           Back
         </Link>
         {this.state.post && (
-          <div>
             <div className="post-card">
-              <h4>{this.state.post.username}</h4>
-              <img className="single-img" src={this.state.post.image_url} />
-              <p className="caption">{this.state.post.caption}</p>
-              <p>Location: {this.state.post.location}</p>
-              <p>Date: {this.state.postDate}</p>
-              <button className="like" onClick={this.addLike}>
-                Like
-              </button>
-              <p>{this.state.likes}</p>
+            <h4>
+              {this.state.post.username}
+            </h4>
+            <img className="single-img" src={this.state.post.image_url} />
+            <p className="caption">
+              {this.state.post.caption}
+            </p>
+            <p>
+              Location: {this.state.post.location}
+            </p>
+            <p>Date: {this.state.postDate}</p>
+            <button className="like" onClick={this.addLike}>Like</button>
+          <p>{this.state.likes}</p>
+          
+          {/* <p>Comments:</p> */}
+          <Comments
+            postId={this.props.match.params.id}
+            createComment={this.props.createComment}
+            updateComment={this.props.updateComment}
+            deleteComment={this.props.deleteComment}
+            getComments={this.props.getComments}
+            comments={this.props.comments}
+            currentUser={this.props.currentUser}
+          />
 
-              {/* <p>Comments:</p> */}
-              <Comments
-                postId={this.props.match.params.id}
-                createComment={this.props.createComment}
-                updateComment={this.props.updateComment}
-                deleteComment={this.props.deleteComment}
-                getComments={this.props.getComments}
-                comments={this.props.comments}
-              />
-            </div>
-
-            {this.props.currentUser ? (
+            {this.props.currentUser.username === this.state.post.username
+              ?
               <div>
                 <Link to="/">
                   <button
@@ -125,9 +129,9 @@ class Post extends Component {
                   />
                 )}
               </div>
-            ) : (
-              <p>You must login to edit posts!</p>
-            )}
+              :
+              <p></p>
+            }
           </div>
         )}
       </div>

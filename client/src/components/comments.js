@@ -26,6 +26,17 @@ class Comments extends Component {
                 <div key={index} className='comment-box'>
                   <h2>{comment.username}</h2>
                   <p>{comment.comment}</p>
+                  {this.props.currentUser.username === comment.username &&
+                    <button className="delete" onClick={(e) => {
+                      e.preventDefault();
+                      let safeguard = window.confirm('You are about to delete this comment! Press OK to confirm.');
+                      if (safeguard === true) {
+                        this.props.deleteComment(e, this.props.postId, comment.id);
+                      }
+                    }
+                    }>
+                      Delete
+                  </button>}
                 </div>
               )
             })
@@ -40,6 +51,7 @@ class Comments extends Component {
         <CreateComment
           postId={this.props.postId}
           createComment={this.props.createComment}
+          currentUser={this.props.currentUser}
         />
       </div>
         

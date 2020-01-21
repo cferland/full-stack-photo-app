@@ -6,7 +6,7 @@ class CreateComment extends Component {
     super(props);
 
     this.state = {
-      username: "",
+      username: this.props.currentUser.username,
       comment: ""
     };
   }
@@ -28,6 +28,7 @@ class CreateComment extends Component {
           }}
         >
           <input className="comment"
+            autocomplete="off"
             type="textarea"
             name="comment"
             value={this.state.comment}
