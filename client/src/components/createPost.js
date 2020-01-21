@@ -23,7 +23,7 @@ export default class CreatePost extends Component {
         return (
             <div>
                 <form onSubmit={(e) => {e.preventDefault(); this.props.createPost(this.state)}}>
-                    <input
+                    <input className="add"
                         type="textarea"
                         name="username"
                         value={this.state.username}
@@ -31,7 +31,7 @@ export default class CreatePost extends Component {
                         placeholder="Username"
                     />
 
-                    <input
+                    <input className="add"
                         type="textarea"
                         name="image_url"
                         value={this.state.image_url}
@@ -39,7 +39,7 @@ export default class CreatePost extends Component {
                         placeholder="Image"
                     />
 
-                    <input
+                    <input className="add"
                         type="textarea"
                         name="caption"
                         value={this.state.caption}
@@ -47,7 +47,7 @@ export default class CreatePost extends Component {
                         placeholder="Caption"
                     />
 
-                    <input
+                    <input className="add"
                         type="textarea"
                         name="location"
                         value={this.state.location}

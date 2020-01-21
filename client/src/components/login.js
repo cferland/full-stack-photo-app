@@ -23,7 +23,7 @@ export default class Login extends Component {
       <form className='form' onSubmit={(e) => this.props.handleLogin(e, { username: this.state.username, password: this.state.password })}>
         <h2>Login!!</h2>
         <label htmlFor='username'></label>
-        <input className='user-form'
+        <input className='login-form'
           type='text'
           name='username'
           placeholder="username"
@@ -31,8 +31,8 @@ export default class Login extends Component {
           onChange={this.handleChange}
         />
         <br/>
-        <label htmlFor='passwrod'></label>
-        <input className='user-form'
+        <label htmlFor='password'></label>
+        <input className='login-form'
           type='password'
           name='password'
           placeholder="password"
@@ -40,9 +40,9 @@ export default class Login extends Component {
           onChange={this.handleChange}
         />
         <br/>
-        <input type='submit' className='btn'/>
+        <input type='submit' className='login-submit'/>
         <br/>
-        <Link to ='/register'>Register</Link>
+        <p>Not logged in? <Link className="register" to ='/register'>Register</Link></p>
       </form>
     )
   }
