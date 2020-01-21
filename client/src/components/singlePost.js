@@ -67,6 +67,7 @@ class Post extends Component {
         <Link className="back-nav" to="/">Back</Link>
         {this.state.post &&
           <div>
+          <div className='post-card'>
             <h4>
               {this.state.post.username}
             </h4>
@@ -89,7 +90,8 @@ class Post extends Component {
             deleteComment={this.props.deleteComment}
             getComments={this.props.getComments}
             comments={this.props.comments}
-          />
+            />
+            </div>
 
             {this.props.currentUser
               ?
