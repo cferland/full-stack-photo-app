@@ -45,7 +45,7 @@ class EditPostForm extends Component {
           this.props.updatePost(this.props.postId, this.state)
           this.props.setPost(this.state)
         }}>
-          <input
+          <input className="edit-input"
             type="textarea"
             name="username"
             value={this.state.username}
@@ -53,7 +53,7 @@ class EditPostForm extends Component {
             placeholder="Username"
           />
 
-          <input
+          <input className="edit-input"
             type="textarea"
             name="image_url"
             value={this.state.image_url}
@@ -61,7 +61,7 @@ class EditPostForm extends Component {
             placeholder="Image"
           />
 
-          <input
+          <input className="edit-input"
             type="textarea"
             name="caption"
             value={this.state.caption}
@@ -69,7 +69,7 @@ class EditPostForm extends Component {
             placeholder="Caption"
           />
 
-          <input
+          <input className="edit-input"
             type="textarea"
             name="location"
             value={this.state.location}
