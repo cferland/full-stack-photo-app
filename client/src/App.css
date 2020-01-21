@@ -18,10 +18,8 @@ body {
   width: 250px;
   margin: 20px auto;
   border-radius: 5px;
-  /* opacity: 0.3; */
   background-color: rgba(216, 127, 228, 0.5);
   border: dashed white 2px;
-  /* margin-left: 20px%; */
   font-size: 20px;
   color: white;
   grid-template-columns: repeat(auto-fill, 200px);
@@ -71,7 +69,6 @@ button:focus {
 }
 
 .single-img {
-  /* height: 500px; */
   width: 500px;
   border-radius: 5px;
   border: solid black 2px;
@@ -95,7 +92,6 @@ input {
 }
 
 caption {
-  /* margin: 0 auto; */
   margin-left: 50%;
   margin-right: 50%;
 }
@@ -255,18 +251,15 @@ input:focus {
 
 .like {
   font-size: 12px;
-  width: 100px;
-  border-radius: 10px;
-  background-color: orange;
-  border: solid black 1px;
-  padding: 7px;
-  margin-bottom: 7px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  transition: transform 0.5s, filter 0.1s ease-in-out;
+  filter: grayscale(100%);
 }
 
 .like:hover {
-  background: black;
-  color: orange;
+    filter: grayscale(0);
 }
 
 .edit {
@@ -452,12 +445,6 @@ input:focus {
     font-size: 30px;
     margin-left: 13%;
   }
-  /* .back-nav {
-    margin: 0;
-  } */
-  /* .logout {
-        margin-bottom: 20px;
-    } */
   .header-section {
     margin-top: 20px;
   }
@@ -470,18 +457,6 @@ input:focus {
   .add-post {
     margin-right: 78px;
   }
-  /* .back-nav {
-    margin: 0;
-  } */
-}
-
-@media only screen and (max-width: 412px) {
-  /* .logout {
-    margin-right: 25%;
-  }
-  .back-nav {
-    margin-left: 5%;
-  } */
 }
 
 @media only screen and (max-width: 320px) {
