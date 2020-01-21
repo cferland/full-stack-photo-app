@@ -51,7 +51,8 @@ class Gallery extends Component {
               }
               {this.state.addingPost &&
                 <CreatePost
-                  createPost={this.props.createPost}
+                createPost={this.props.createPost}
+                currentUser={this.props.currentUser}
                 />
               }
             </div>

@@ -61,7 +61,9 @@ Comment.init(
 );
 
 User.hasMany(Post, { onDelete: "cascade" });
-User.hasMany(Comment, { onDelete: "cascade" });
+User.hasMany(Comment, {
+  onDelete: "cascade"
+});
 Post.belongsTo(User);
 Post.hasMany(Comment, { onDelete: "cascade" });
 Comment.belongsTo(Post);
