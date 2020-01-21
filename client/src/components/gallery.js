@@ -26,7 +26,7 @@ class Gallery extends Component {
 
   render() {
     return (
-      <div>
+      <div className="gallery-header">
         <header className="header">All the Cheetoh Photos</header>
         <main className="gallery-space">
           {this.props.posts ? (

@@ -64,6 +64,7 @@ class Post extends Component {
   render() {
     return (
       <div>
+        <Link className="back-nav" to="/">Back</Link>
         {this.state.post &&
           <div>
             <h4>

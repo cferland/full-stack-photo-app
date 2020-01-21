@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Header(props) {
   return (
-    <nav className="nav-menu">
+    <nav>
     {props.currentUser ?
       <div className="header-section">
         {/* <p className="greeting">Hello, {props.currentUser.username}</p> */}
@@ -13,9 +13,11 @@ function Header(props) {
         </div>
       </div>
       :
+      <div>
       <Link className="login-button" to="/login">Login</Link>
+      <Link className="home-nav" to="/">Home</Link>
+      </div>
     }
-    <Link className="home-nav" to="/">Home</Link>
     </nav>
   )
 }
