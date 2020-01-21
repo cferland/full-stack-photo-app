@@ -5,7 +5,7 @@ export default class CreatePost extends Component {
         super(props);
 
         this.state = {
-            username: "",
+            username: this.props.currentUser.username,
             image_url: "",
             caption: "",
             location: ""
@@ -23,13 +23,13 @@ export default class CreatePost extends Component {
         return (
             <div>
                 <form onSubmit={(e) => {e.preventDefault(); this.props.createPost(this.state)}}>
-                    <input className="add"
+                    {/* <input className="add"
                         type="textarea"
                         name="username"
                         value={this.state.username}
                         onChange={this.handleChange}
                         placeholder="Username"
-                    />
+                    /> */}
 
                     <input className="add"
                         type="textarea"

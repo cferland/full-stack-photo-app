@@ -89,9 +89,10 @@ class Post extends Component {
             deleteComment={this.props.deleteComment}
             getComments={this.props.getComments}
             comments={this.props.comments}
+            currentUser={this.props.currentUser}
           />
 
-            {this.props.currentUser
+            {this.props.currentUser.username === this.state.post.username
               ?
               <div>
                 <Link to='/'>
@@ -120,7 +121,7 @@ class Post extends Component {
                 }
               </div>
               :
-              <p>You must login to edit posts!</p>
+              <p></p>
             }
           </div>
         }

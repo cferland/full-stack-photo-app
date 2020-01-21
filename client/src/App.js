@@ -137,9 +137,13 @@ class App extends Component {
     })
   }
   
-  deleteComment = async (e, id) => {
+  deleteComment = async (e, postId, id) => {
     e.preventDefault();
-    await deleteComment(id);
+    await deleteComment(postId, id);
+    const comments = await showComments(postId);
+    this.setState({
+      comments
+    })
   }
 
   componentDidMount() {
