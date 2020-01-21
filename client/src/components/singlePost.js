@@ -13,7 +13,7 @@ class Post extends Component {
       postId: null,
       editing: false,
       likes: 0,
-      comments: null
+      comments: []
     }
   }
 
