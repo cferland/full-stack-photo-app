@@ -105,10 +105,20 @@ input:focus {
   width: 300px;
   height: 25px;
   font-size: 20px;
+  color: white;
 }
 
-#placeholder {
-  color: black;
+.login-form::placeholder {
+    color: white;
+    opacity: 0.5
+}
+
+.login-screen {
+    color: white;
+}
+
+.not-logged {
+    color: white;
 }
 
 .comment:-webkit-autofill,
@@ -291,6 +301,10 @@ input:focus {
     margin-left: 10px;
 }
 
+.register {
+    color: orange
+}
+
 .register:hover {
   text-decoration: underline;
 }
@@ -317,7 +331,17 @@ input:focus {
   width: 300px;
   height: 25px;
   font-size: 20px;
+  color: white;
 }
+
+.register-screen {
+    color: white;
+}
+  
+  .reg-form::placeholder {
+      color: white;
+      opacity: 0.5;
+  }
 
 .reg-submit {
   padding: 5px;
@@ -331,6 +355,7 @@ input:focus {
 
 .footer {
   margin-top: 20px;
+  color: white;
 }
 
 .home-nav {
