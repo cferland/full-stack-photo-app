@@ -21,8 +21,7 @@ class App extends Component {
       errorText: '',
       post: null,
       posts: null,
-      comment: null,
-      comments: null
+      comments: []
     }
   }
 
@@ -178,6 +177,10 @@ class App extends Component {
             updatePost={this.updatePost}
             deletePost={this.deletePost}
             createComment={this.createComment}
+            getComments={this.getComments}
+            updateComment={this.updateComment}
+            deleteComment={this.deleteComment}
+            comments={this.state.comments}
           />}
         />
         <Footer/>

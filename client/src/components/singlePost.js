@@ -81,7 +81,14 @@ class Post extends Component {
           <p>{this.state.likes}</p>
           
           {/* <p>Comments:</p> */}
-          <Comments postId={this.props.match.params.id} createComment={this.props.createComment} />
+          <Comments
+            postId={this.props.match.params.id}
+            createComment={this.props.createComment}
+            updateComment={this.props.updateComment}
+            deleteComment={this.props.deleteComment}
+            getComments={this.props.getComments}
+            comments={this.props.comments}
+          />
 
             {this.props.currentUser
               ?
