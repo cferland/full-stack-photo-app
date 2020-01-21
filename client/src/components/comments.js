@@ -40,6 +40,7 @@ class Comments extends Component {
         <CreateComment
           postId={this.props.postId}
           createComment={this.props.createComment}
+          currentUser={this.props.currentUser}
         />
       </div>
         

@@ -88,6 +88,7 @@ class Post extends Component {
             deleteComment={this.props.deleteComment}
             getComments={this.props.getComments}
             comments={this.props.comments}
+            currentUser={this.props.currentUser}
           />
 
             {this.props.currentUser
