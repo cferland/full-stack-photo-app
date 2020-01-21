@@ -21,7 +21,7 @@ export default class Register extends Component {
     render() {
       return (
         <form onSubmit={(e) => this.props.handleRegister(e, { username: this.state.username, password: this.state.password })}>
-          <h2>Register</h2>
+          <h2 className="register-screen">Register</h2>
           <label htmlFor='username'></label>
           <input className="reg-form"
             autocomplete="off"

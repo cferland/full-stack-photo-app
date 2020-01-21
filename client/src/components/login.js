@@ -21,7 +21,7 @@ export default class Login extends Component {
   render() {
     return (
       <form className='form' onSubmit={(e) => this.props.handleLogin(e, { username: this.state.username, password: this.state.password })}>
-        <h2>Login</h2>
+        <h2 className="login-screen">Login</h2>
         {/* <label htmlFor='username'></label> */}
         <input className='login-form'
           autocomplete="off"
@@ -44,7 +44,7 @@ export default class Login extends Component {
         <br/>
         <input type='submit' className='login-submit'/>
         <br/>
-        <p>Not logged in? <Link className="register" to ='/register'>Register</Link></p>
+        <p className="not-logged">Not logged in? <Link className="register" to ='/register'>Register</Link></p>
       </form>
     )
   }
