@@ -28,6 +28,7 @@ class CreateComment extends Component {
           }}
         >
           <input className="comment"
+            autocomplete="off"
             type="textarea"
             name="comment"
             value={this.state.comment}

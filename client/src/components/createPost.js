@@ -32,6 +32,7 @@ export default class CreatePost extends Component {
                     /> */}
 
                     <input className="add"
+                        autocomplete="off"
                         type="textarea"
                         name="image_url"
                         value={this.state.image_url}
@@ -40,6 +41,7 @@ export default class CreatePost extends Component {
                     />
 
                     <input className="add"
+                        autocomplete="off"
                         type="textarea"
                         name="caption"
                         value={this.state.caption}
@@ -48,6 +50,7 @@ export default class CreatePost extends Component {
                     />
 
                     <input className="add"
+                        autocomplete="off"
                         type="textarea"
                         name="location"
                         value={this.state.location}
@@ -55,7 +58,7 @@ export default class CreatePost extends Component {
                         placeholder="Location"
                     />
 
-                    <input type="submit" />
+                    <input className="create" type="submit" />
                 </form>
             </div>
         )
