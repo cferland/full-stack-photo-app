@@ -1,3 +1,15 @@
+
+body {
+  background-image: url('./assets/images/cheetah_background_effect2.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  border-top: 2px solid black;
+  margin: 0 auto;
+
+}  
+
+
 .add-post {
     height: 400px;
     width: 250px;
