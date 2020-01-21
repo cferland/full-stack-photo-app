@@ -45,6 +45,7 @@ class EditPostForm extends Component {
           this.props.updatePost(this.props.postId, this.state)
           this.props.setPost(this.state)
         }}>
+          {/* <input
           <input className="edit-input"
             autocomplete="off"
             type="textarea"
@@ -52,7 +53,7 @@ class EditPostForm extends Component {
             value={this.state.username}
             onChange={this.handleChange}
             placeholder="Username"
-          />
+          /> */}
 
           <input className="edit-input"
             autocomplete="off"

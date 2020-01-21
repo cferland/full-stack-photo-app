@@ -6,7 +6,7 @@ class CreateComment extends Component {
     super(props);
 
     this.state = {
-      username: "",
+      username: this.props.currentUser.username,
       comment: ""
     };
   }

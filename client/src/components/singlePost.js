@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import EditPostForm from './editPost';
-import Comments from './comments'
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import EditPostForm from "./editPost";
+import Comments from "./comments";
+import Header from './header';
 
 class Post extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       post: null,
@@ -14,15 +15,15 @@ class Post extends Component {
       editing: false,
       likes: 0,
       comments: []
-    }
+    };
   }
 
-  addLike = (e) => {
+  addLike = e => {
     e.preventDefault();
     this.setState({
       likes: this.state.likes + 1
-    })
-  }
+    });
+  };
 
   componentDidMount = async () => {
     const post = await this.props.getPost(this.props.match.params.id);
@@ -34,23 +35,23 @@ class Post extends Component {
       post,
       postId,
       postDate
-    })
+    });
     console.log(this.state.post);
-  }
+  };
 
-  setPost = (newPost) => {
+  setPost = newPost => {
     this.setState({
       post: newPost,
       editing: false
-    })
-  }
+    });
+  };
 
-  editForm = (e) => {
+  editForm = e => {
     e.preventDefault();
     this.setState({
       editing: true
-    })
-  }
+    });
+  };
 
   reset = () => {
     this.setState({
@@ -58,15 +59,19 @@ class Post extends Component {
       postId: null,
       postDate: null,
       editing: false
-    })
-  }
+    });
+  };
 
   render() {
     return (
       <div>
-        <Link className="back-nav" to="/">Back</Link>
-        {this.state.post &&
-          <div>
+       
+
+        <Link className="back-nav" to="/">
+          Back
+        </Link>
+        {this.state.post && (
+            <div className="post-card">
             <h4>
               {this.state.post.username}
             </h4>
@@ -89,44 +94,49 @@ class Post extends Component {
             deleteComment={this.props.deleteComment}
             getComments={this.props.getComments}
             comments={this.props.comments}
+            currentUser={this.props.currentUser}
           />
 
-            {this.props.currentUser
+            {this.props.currentUser.username === this.state.post.username
               ?
               <div>
-                <Link to='/'>
-                  <button className="delete" onClick={(e) => {
-                    e.preventDefault();
-                    let safeguard = window.confirm('You are about to delete this post! Press OK to confirm.');
-                    if (safeguard === true) {
-                      this.props.deletePost(e, this.state.postId);
-                      this.reset();
-                    }
-                  }
-                  }>
+                <Link to="/">
+                  <button
+                    className="delete"
+                    onClick={e => {
+                      e.preventDefault();
+                      let safeguard = window.confirm(
+                        "You are about to delete this post! Press OK to confirm."
+                      );
+                      if (safeguard === true) {
+                        this.props.deletePost(e, this.state.postId);
+                        this.reset();
+                      }
+                    }}
+                  >
                     Delete
                   </button>
                 </Link>
-                <button className="edit" onClick={(e) => this.editForm(e)}>
+                <button className="edit" onClick={e => this.editForm(e)}>
                   Edit
                 </button>
-                {this.state.editing &&
+                {this.state.editing && (
                   <EditPostForm
                     updatePost={this.props.updatePost}
                     postId={this.props.match.params.id}
                     posts={this.props.posts}
                     setPost={this.setPost}
                   />
-                }
+                )}
               </div>
               :
-              <p>You must login to edit posts!</p>
+              <p></p>
             }
           </div>
-        }
+        )}
       </div>
-    )
+    );
   }
 }
 
-export default Post; 
+export default Post;
