@@ -97,7 +97,7 @@ class Post extends Component {
             currentUser={this.props.currentUser}
           />
 
-            {this.props.currentUser.username === this.state.post.username
+            {this.props.currentUser && this.props.currentUser.username === this.state.post.username
               ?
               <div>
                 <Link to="/">
