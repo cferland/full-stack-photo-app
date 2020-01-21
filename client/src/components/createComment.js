@@ -6,9 +6,17 @@ class CreateComment extends Component {
     super(props);
 
     this.state = {
-      username: this.props.currentUser.username,
+      username: "",
       comment: ""
     };
+  }
+
+  componentDidMount = () => {
+    if (this.props.currentUser) {
+      this.setState({
+        username: this.props.currentUser.username
+      })
+    }
   }
 
   handleChange = e => {

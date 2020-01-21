@@ -26,7 +26,8 @@ Post.init(
     username: Sequelize.STRING,
     image_url: Sequelize.TEXT,
     caption: Sequelize.TEXT,
-    location: Sequelize.STRING
+    location: Sequelize.STRING,
+    likes: Sequelize.INTEGER
   },
   {
     sequelize,
