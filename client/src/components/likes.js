@@ -51,7 +51,7 @@ class LikeButton extends Component {
             <p>Give this a cheetoh!</p>
           </div>
         }
-        <p>This photo has {this.state.likes} cheetohs!</p>
+        <p>This photo has {this.state.likes || 0} cheetohs!</p>
       </div>
     )
   }
