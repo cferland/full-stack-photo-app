@@ -19,11 +19,11 @@ class Post extends Component {
   }
 
   componentDidMount = async () => {
+    await this.props.getPosts();
     const post = await this.props.getPost(this.props.match.params.id);
     const postId = this.props.match.params.id;
     const setPostDate = new Date(post.createdAt);
     const postDate = setPostDate.toDateString();
-    console.log(postDate);
     this.setState({
       post,
       postId,
