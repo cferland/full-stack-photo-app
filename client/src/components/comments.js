@@ -20,11 +20,11 @@ class Comments extends Component {
       <div>
         {this.props.comments &&
           <div className="comments">
+            <h2>Comments</h2>
             {this.props.comments.map((comment, index) => {
               return (
                 <div key={index} className='comment-box'>
-                  <h2>{comment.username}</h2>
-                  <p>{comment.comment}</p>
+                  <p><span className="bold">{comment.username}:</span> {comment.comment}</p>
                   {this.props.currentUser && this.props.currentUser.username === comment.username &&
                     <button className="delete" onClick={(e) => {
                       e.preventDefault();
