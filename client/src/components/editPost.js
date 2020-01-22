@@ -72,7 +72,6 @@ class EditPostForm extends Component {
             onChange={this.handleChange}
             placeholder="Location"
           />
-
           <input className="submit-edit" type="submit" />
         </form>
       </div>
