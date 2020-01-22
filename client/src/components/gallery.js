@@ -32,16 +32,19 @@ class Gallery extends Component {
                   </div>)
               })}
               {this.props.currentUser &&
-              <div className="add-post">
-                <button className="add-button" onClick={() => (this.setState({ addingPost: true }))}>Add a Post <br/><span className="plus-button">+</span></button>
-                </div>
-              }
-              {this.state.addingPost &&
+                <div className="add-post">
+                {this.state.addingPost ?
                 <CreatePost
                 createPost={this.props.createPost}
-                currentUser={this.props.currentUser}
-                />
+                currentUser={this.props.currentUser} 
+                  /> :
+                  <button className="add-button" onClick={() => (this.setState({ addingPost: true }))}>Add a Post <br /><span className="plus-button">+</span></button>
+                }
+                
+                
+              </div>
               }
+              
             </div>
           ) : (
               <div>Loading...</div>
