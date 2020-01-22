@@ -44,11 +44,13 @@ class LikeButton extends Component {
   render() {
     return (
       <div>
-        {/* <button className="like" onClick={this.addLike}> */}
-          <img onClick={this.addLike} className="like" src="https://res.cloudinary.com/teepublic/image/private/s--jEJ3rCFV--/c_crop,x_10,y_10/c_fit,h_830/c_crop,g_north_west,h_1038,w_1038,x_-122,y_-104/l_upload:v1565806151:production:blanks:vdbwo35fw6qtflw9kezw/fl_layer_apply,g_north_west,x_-233,y_-215/b_rgb:e3ab0a/c_limit,f_jpg,h_630,q_90,w_630/v1574562214/production/designs/6863864_0.jpg"/>
-          <p>Give this a cheetoh!</p>
-          {/* </button> */}
-        <p>{this.state.likes}</p>
+        {this.props.currentUser.username !== this.state.username &&
+          <div>
+            <img onClick={this.addLike} className="like" src="https://res.cloudinary.com/teepublic/image/private/s--jEJ3rCFV--/c_crop,x_10,y_10/c_fit,h_830/c_crop,g_north_west,h_1038,w_1038,x_-122,y_-104/l_upload:v1565806151:production:blanks:vdbwo35fw6qtflw9kezw/fl_layer_apply,g_north_west,x_-233,y_-215/b_rgb:e3ab0a/c_limit,f_jpg,h_630,q_90,w_630/v1574562214/production/designs/6863864_0.jpg" />
+            <p>Give this a cheetoh!</p>
+          </div>
+        }
+        <p>This photo has {this.state.likes} cheetohs!</p>
       </div>
     )
   }

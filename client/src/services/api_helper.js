@@ -1,8 +1,9 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: "http://immense-stream-80916.herokuapp.com/"
+//   baseURL: "http://immense-stream-80916.herokuapp.com/"
   //put heroku link here after deploying when ready
+  baseURL: "https://boiling-sierra-74418.herokuapp.com/"
 })
 
 export const createPost = async (newPost) => {
@@ -61,18 +62,8 @@ export const createComment = async (id, newComment) => {
   return resp.data;
 }
 
-export const updateComment = async (id, updateData) => {
-  const resp = await api.put(`/posts/${id}/comments`, updateData);
-  return resp.data;
-}
-
 export const deleteComment = async (postId, id) => {
   const resp = await api.delete(`posts/${postId}/comments/${id}`);
-  return resp.data;
-}
-
-export const showComment = async (id) => {
-  const resp = await api.get(`/posts/${id}/comments/${id}`);
   return resp.data;
 }
 
