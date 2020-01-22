@@ -80,8 +80,9 @@ button:focus {
 
 .name {
   color: white;
-  text-shadow: 2px 2px 6px #000000;
-
+  text-shadow: 2px 2px 10px #000000;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
 }
 
 input {
