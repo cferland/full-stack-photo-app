@@ -34,11 +34,12 @@ class LikeButton extends Component {
 
   addLike = async (e) => {
     e.preventDefault();
+    await this.props.setPost(this.state);
     this.setState({
       likes: this.state.likes + 1
     })
-    await this.props.updatePost(this.props.postId, this.state)
-    await this.props.setPost(this.state)
+    await this.props.updatePost(this.props.postId, this.state);
+    
   };
 
   render() {
