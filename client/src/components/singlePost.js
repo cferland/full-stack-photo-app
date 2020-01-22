@@ -57,39 +57,41 @@ class Post extends Component {
   render() {
     return (
       <div>
-       
-
         <Link className="back-nav" to="/">
           Back
         </Link>
         {this.state.post && (
-            <div className="post-card">
-            <h4>
-              {this.state.post.username}
-            </h4>
+          <div className="post-card">
+            <h4>{this.state.post.username}</h4>
             <img className="single-img" src={this.state.post.image_url} />
-            <p className="caption">
-              {this.state.post.caption}
+            <p className="caption">{this.state.post.caption}</p>
+            <p>
+              <span className="bold">Location:</span> {this.state.post.location}
             </p>
             <p>
-              Location: {this.state.post.location}
+              <span className="bold">Date:</span> {this.state.postDate}
             </p>
-            <p>Date: {this.state.postDate}</p>
-            {this.props.currentUser &&
-              <LikeButton currentUser={this.props.currentUser} posts={this.props.posts} postId={this.props.match.params.id} setPost={this.setPost} updatePost={this.props.updatePost} />
-            }
-          <Comments
-            postId={this.props.match.params.id}
-            createComment={this.props.createComment}
-            updateComment={this.props.updateComment}
-            deleteComment={this.props.deleteComment}
-            getComments={this.props.getComments}
-            comments={this.props.comments}
-            currentUser={this.props.currentUser}
-          />
+            {this.props.currentUser && (
+              <LikeButton
+                currentUser={this.props.currentUser}
+                posts={this.props.posts}
+                postId={this.props.match.params.id}
+                setPost={this.setPost}
+                updatePost={this.props.updatePost}
+              />
+            )}
+            <Comments
+              postId={this.props.match.params.id}
+              createComment={this.props.createComment}
+              updateComment={this.props.updateComment}
+              deleteComment={this.props.deleteComment}
+              getComments={this.props.getComments}
+              comments={this.props.comments}
+              currentUser={this.props.currentUser}
+            />
 
-            {this.props.currentUser && this.props.currentUser.username === this.state.post.username
-              ?
+            {this.props.currentUser &&
+            this.props.currentUser.username === this.state.post.username ? (
               <div>
                 <Link to="/">
                   <button
@@ -120,9 +122,9 @@ class Post extends Component {
                   />
                 )}
               </div>
-              :
+            ) : (
               <p>You are not authorized to modify this post.</p>
-            }
+            )}
           </div>
         )}
       </div>
