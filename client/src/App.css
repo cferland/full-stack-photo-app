@@ -14,6 +14,10 @@ body {
     overscroll-behavior: none;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 .add-post {
     height: 400px;
     width: 250px;
@@ -80,8 +84,10 @@ button:focus {
 }
 
 .name {
-    color: white;
-    text-shadow: 2px 2px 6px #000000;
+  color: white;
+  text-shadow: 2px 2px 10px #000000;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
 }
 
 input {
