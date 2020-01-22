@@ -269,6 +269,8 @@ input:focus {
     height: 40px;
     transition: transform 0.5s, filter 0.1s ease-in-out;
     filter: grayscale(100%);
+    margin-bottom: -2%;
+    margin-top: 15px;
 }
 
 .like:hover {
