@@ -13,6 +13,10 @@ body {
   background-color: black;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 .add-post {
   height: 400px;
   width: 250px;

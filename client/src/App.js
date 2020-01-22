@@ -21,7 +21,7 @@ class App extends Component {
       currentUser: null,
       errorText: '',
       post: null,
-      posts: null,
+      posts: [],
       comments: []
     }
   }
@@ -155,6 +155,7 @@ class App extends Component {
         <Route exact path="/posts/:id" render={(props) =>
           <Post {...props}
             getPost={this.getPost}
+            getPosts={this.getPosts}
             currentUser={this.state.currentUser}
             post={this.state.post}
             posts={this.state.posts}
