@@ -26,13 +26,19 @@ class CreateComment extends Component {
     });
   };
 
+  resetComment = () => {
+    this.setState ({
+      comment: ""
+    })
+  }
+
   render() {
     return (
       <div>
         <form
           onSubmit={e => {
             e.preventDefault();
-            this.props.createComment(this.props.postId, this.state);
+            this.props.createComment(this.props.postId, this.state); this.resetComment();
           }}
         >
           <input className="comment"
