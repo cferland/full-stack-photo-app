@@ -18,7 +18,6 @@ class Comments extends Component {
   render() {
     return (
       <div>
-
         {this.props.comments &&
           <div className="comments">
             {this.props.comments.map((comment, index) => {
@@ -42,10 +41,7 @@ class Comments extends Component {
             })
             }
           </div>
-            
         }
-
-             
 
         {this.props.currentUser &&
           <CreateComment
@@ -55,7 +51,7 @@ class Comments extends Component {
           />
         }
       </div>
-        
+
     )
   }
 }

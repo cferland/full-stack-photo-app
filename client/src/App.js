@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Route, Link, Redirect } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import './App.css';
 import './sass/app.scss';
 
 import { loginUser, registerUser, verifyUser, showPost, showPosts, createPost, updatePost, 
-        deletePost, createComment, showComment, showComments, updateComment, deleteComment } from './services/api_helper';
+        deletePost, createComment, showComments, deleteComment } from './services/api_helper';
 
 import Header from './components/header';
 import Login from './components/login';
@@ -75,7 +75,6 @@ class App extends Component {
     this.setState({
       posts
     })
-    console.log(this.state.posts);
   }
 
   createPost = async (post) => {
@@ -101,14 +100,6 @@ class App extends Component {
     e.preventDefault();
     await deletePost(id);
   }
-
-  getComment = async (id) => {
-    const comment = await showComment(id);
-    this.setState({
-      comment
-    })
-    return comment;
-  }
   
   getComments = async (id) => {
     const comments = await showComments(id);
@@ -123,18 +114,6 @@ class App extends Component {
     comments.push(newComment);
     this.setState({
       comments
-    })
-    console.log(this.state.comments);
-
-  }
-  
-  updateComment = async (id, updates) => {
-    const newComment = await updateComment(id, updates);
-    this.setState({
-      comments: this.state.comments.map(comment => (
-        comment.id === parseInt(id) ? newComment : comment
-      )),
-      comment: newComment
     })
   }
   
@@ -183,7 +162,6 @@ class App extends Component {
             deletePost={this.deletePost}
             createComment={this.createComment}
             getComments={this.getComments}
-            updateComment={this.updateComment}
             deleteComment={this.deleteComment}
             comments={this.state.comments}
           />}

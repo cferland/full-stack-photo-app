@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import CreatePost from './createPost';
 
 class Gallery extends Component {
@@ -8,20 +8,12 @@ class Gallery extends Component {
 
     this.state = {
       posts: null,
-      addingPost: false,
-      likes: 0
+      addingPost: false
     }
   }
 
   componentDidMount = async () => {
     await this.props.getPosts();
-  }
-
-  handleLikes = (e) => {
-    e.preventDefault();
-    this.setState({
-      likes: this.state.likes + 1
-    })
   }
 
   render() {
@@ -32,15 +24,10 @@ class Gallery extends Component {
           {this.props.posts ? (
             <div className="gallery">
               {this.props.posts.map((post, index) => {
-                const setPostDate = new Date(post.createdAt);
-                const postDate = setPostDate.toDateString();
                 return (
                   <div key={index} className="social_card">
                     <h2 className="name">{post.username}</h2>
                     <img className="gallery-img" src={post.image_url}></img>
-                    {/* <p>{post.caption}</p>
-                    <p>{post.location}</p>
-                    <p>{postDate}</p> */}
                     <button className="post-link"><Link to={`/posts/${post.id}`}>Go to Post</Link></button> 
                   </div>)
               })}
