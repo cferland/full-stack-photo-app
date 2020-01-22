@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import EditPostForm from "./editPost";
 import Comments from "./comments";
 import LikeButton from "./likes.js";
-import Header from './header';
 
 class Post extends Component {
   constructor(props) {
@@ -30,7 +29,6 @@ class Post extends Component {
       postId,
       postDate
     });
-    console.log(this.state.post);
   };
 
   setPost = newPost => {
@@ -78,9 +76,8 @@ class Post extends Component {
             </p>
             <p>Date: {this.state.postDate}</p>
             {this.props.currentUser &&
-              <LikeButton posts={this.props.posts} postId={this.props.match.params.id} setPost={this.setPost} updatePost={this.props.updatePost} />
+              <LikeButton currentUser={this.props.currentUser} posts={this.props.posts} postId={this.props.match.params.id} setPost={this.setPost} updatePost={this.props.updatePost} />
             }
-          {/* <p>Comments:</p> */}
           <Comments
             postId={this.props.match.params.id}
             createComment={this.props.createComment}
@@ -124,7 +121,7 @@ class Post extends Component {
                 )}
               </div>
               :
-              <p></p>
+              <p>You are not authorized to modify this post.</p>
             }
           </div>
         )}
