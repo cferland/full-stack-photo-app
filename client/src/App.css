@@ -90,6 +90,11 @@ button:focus {
   font-weight: 300;
 }
 
+.caption {
+  font-style: italic;
+  font-size: 1.25rem;
+}
+
 input {
     background-color: rgba(216, 127, 228, 0.5);
     border: solid black 1px;
