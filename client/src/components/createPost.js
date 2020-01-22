@@ -22,7 +22,7 @@ export default class CreatePost extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={(e) => { e.preventDefault(); this.props.createPost(this.state) }}>
+        <form className="create-form" onSubmit={(e) => { e.preventDefault(); this.props.createPost(this.state) }}>
           <input className="add"
             autocomplete="off"
             type="textarea"

@@ -18,7 +18,8 @@ class Comments extends Component {
   render() {
     return (
       <div>
-        {this.props.comments &&
+        {" "}
+        {this.props.comments && (
           <div className="comments">
             <h2>Comments</h2>
             {this.props.comments.map((comment, index) => {
@@ -37,22 +38,19 @@ class Comments extends Component {
                       Delete
                   </button>}
                 </div>
-              )
-            })
-            }
+              );
+            })}{" "}
           </div>
-        }
-
-        {this.props.currentUser &&
+        )}
+        {this.props.currentUser && (
           <CreateComment
             postId={this.props.postId}
             createComment={this.props.createComment}
             currentUser={this.props.currentUser}
           />
-        }
+        )}{" "}
       </div>
-
-    )
+    );
   }
 }
 

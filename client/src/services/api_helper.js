@@ -1,6 +1,8 @@
 import axios from 'axios';
 
 const api = axios.create({
+//   baseURL: "http://immense-stream-80916.herokuapp.com/"
+  //put heroku link here after deploying when ready
   baseURL: "https://boiling-sierra-74418.herokuapp.com/"
 })
 
