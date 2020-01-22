@@ -57,8 +57,6 @@ class Post extends Component {
   render() {
     return (
       <div>
-       
-
         <Link className="back-nav" to="/">
           Back
         </Link>
@@ -76,7 +74,7 @@ class Post extends Component {
             </p>
             <p>Date: {this.state.postDate}</p>
             {this.props.currentUser &&
-              <LikeButton currentUser={this.props.currentUser} posts={this.props.posts} postId={this.props.match.params.id} setPost={this.setPost} updatePost={this.props.updatePost} />
+              <LikeButton currentUser={this.props.currentUser} post={this.state.post.likes} posts={this.props.posts} postId={this.props.match.params.id} setPost={this.setPost} updatePost={this.props.updatePost} />
             }
           <Comments
             postId={this.props.match.params.id}
