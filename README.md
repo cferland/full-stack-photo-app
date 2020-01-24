@@ -5,7 +5,7 @@
 
 ## Overview
 
-_**Project Title** is a photo library that allows users to view a gallery of images. Users with valid login credentials can add, edit, and delete images to and from the gallery. Images can be provided with captions, as well as commented on and liked by other users._
+_**Cheetoh Photo** is a photo library that allows users to view a gallery of images. Users with valid login credentials can add, edit, and delete images to and from the gallery. Images can be provided with captions, as well as commented on and liked by other users._
 
 ### Team Members
 
@@ -23,7 +23,7 @@ All digital assets used with full licensing and permission.
 
 ## MVP
 
-_The **Project Title** MVP will provide a login and registration form to users, as well as forms for creating and editing new image posts within a gallery. There will also be an option to delete these posts. Users who are not logged in will be able to view the gallery but nothing else. There will be backend databases to store user credentials and the gallery contents._
+_The **Cheetoh Photo** MVP will provide a login and registration form to users, as well as forms for creating and editing new image posts within a gallery. There will also be an option to delete these posts. Users who are not logged in will be able to view the gallery but nothing else. There will be backend databases to store user credentials and the gallery contents._
 
 <br>
 
@@ -135,7 +135,7 @@ src
 photoapp_db
 |__ users/
 |__ posts/
-|__ galleries/
+|__ comments/
 
 ```
 
